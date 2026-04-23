@@ -13,6 +13,7 @@ body {
   font-style: normal;
   background-color: #fefefe;
   color: #111;
+  
 }
 
 /* ---------- HEADER ---------- */
@@ -58,7 +59,7 @@ body {
   text-decoration: none;
   color: #000;
   font-weight: 600;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Gilroy', sans-serif;
   transition: color 0.3s ease;
 }
 .menu ul li a button{
@@ -66,7 +67,7 @@ body {
   text-decoration: none;
   color: #000;
   font-weight: 600;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Gilroy', sans-serif;
   transition: color 0.3s ease;  
 }
 .menu ul li a::after {
