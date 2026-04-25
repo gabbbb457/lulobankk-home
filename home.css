@@ -14,6 +14,18 @@ body {
   background-color: #fefefe;
   color: #111;
   
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./fonts/gilroy-medium-webfont.woff2') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./fonts/gilroy-bold-webfont.woff2') format('truetype');
+  font-weight: 700;
+}
 }
 
 /* ---------- HEADER ---------- */
@@ -165,15 +177,14 @@ body {
 }
 
 .hero-content {
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 3.5em;
   color: #111;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 .hero h2 {
   font-size: 2.1rem;
