@@ -263,6 +263,7 @@ body {
 .info-text h2 {
   font-size: 2.5rem;
   font-weight: 700;
+
   color: #10172B;
   margin-bottom: 25px;
 }
@@ -323,7 +324,7 @@ body {
     top: 0;
     left: 0;
     z-index: -2;
-    background-color: #262b38;
+    background-color: #243152;
 }
 
 .section-background-part {
