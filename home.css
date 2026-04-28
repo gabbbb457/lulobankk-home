@@ -328,7 +328,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  border-radius: 40px; /* ← ajusta hasta que las esquinas coincidan */
+  border-radius: 30px; /* ← ajusta hasta que las esquinas coincidan */
 }
 
 .section-background {
@@ -375,8 +375,10 @@ body {
 }
 
 .ahorro-texto {
-  padding-left: 120px; 
-  padding-top: 80px;   
+  padding: 60px 60px 60px 120px;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;       
 }
 
 .ahorro-texto h2 {
@@ -430,7 +432,7 @@ body {
   margin-top: 12px;
 }
 
-/* ✅ Imagen de ahorro abajo */
+/* Imagen de ahorro abajo */
 .ahorro-imagen {
   background: #1F2A44;
   height: 100%;
@@ -440,7 +442,7 @@ body {
 }
 
 .ahorro-imagen img {
-  max-height: 400px;
+  max-height: 450px;
   object-fit: contain;
 }
 
@@ -449,8 +451,8 @@ body {
 .lulo-credito {
   display: grid;
   grid-template-columns: 50% 50%;
-  min-height: 80vh;
-  align-items: center;
+  min-height: 600px;
+  align-items: stretch;
 }
 
 
@@ -464,7 +466,7 @@ body {
 }
 
 .credito-imagen img {
-  max-height: 400px;
+  max-height: 450px;
   object-fit: contain;
 }
 
