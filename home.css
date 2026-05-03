@@ -1215,9 +1215,10 @@ hr {
     }
 
     .footer-apps img {
-        width: 140px;
-        content: center;
-        margin-top: 0;
+  width: 130px;
+  margin-top: 0;
+  border: 1px solid #ffffff;  /* ← borde blanco */
+  border-radius: 8px;  
     }
 
         /* Términos y Condiciones */
