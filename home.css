@@ -871,6 +871,11 @@ hr {
 @media (max-width: 1024px) {
 
   /*HOLA GABII AQUÍ ESTOY HACIENDO LA VERSION MOBILE :)) JUNGKOOK T AMA*/
+  /*GABI SI VES ESTO ES PARA DARTE LA  MALA NOTICIA DE QUE 
+  LES CANTARON OUTRO:WINGS Y ON A LAS GRINGAS DE EL PASO TIPO WTF
+  SI ERA TU CANCION Y MI CANCION EN PLAN ME MWORD Y TODO VA A SER CULPA
+  DE BETEESE NOOO BTS NO DEBISTE HABER HECHO ESO AHORA TENDRÉ QUE
+  TIRARME DEL BALCÓN BORAHAE SHIBAL*/
 
   /*---CONTAINER DE INFO---*/
   .info-container {
@@ -929,62 +934,76 @@ hr {
 
 
 
-  /*---CONTAINER LULO CUENTA---*/
-  .lulo-ahorro {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
 
-  /* Convertimos el texto en "transparente" al grid */
-  .ahorro-texto {
-    display: flex;
-    flex-direction: column;
-  }
+/* --- LULO AHORRO MOBILE --- */
+/* CONTENEDOR */
+.lulo-ahorro {
+  display: flex;
+  flex-direction: column;
+  background: #EDEFF2;
+  margin-top: 20px;
+}
 
-  /* ORDEN REAL */
+/* 🔵 BLOQUE SUPERIOR (GRIS) */
+.lulo-ahorro .ahorro-imagen {
+  order: 2;
+  padding: 100px;
 
-  .ahorro-texto h2 {
-    order: 1;
-    text-align: center;
-    margin-top: 10px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent !important;
+}
 
-  .lulo-ahorro .ahorro-imagen {
-    order: 2;
-    display: flex;
-    justify-content: center;
-    margin-top: -270px;
-  }
+/* TAMBIÉN METEMOS EL TÍTULO EN EL GRIS */
+.ahorro-texto h2 {
+  order: 1;
+  text-align: center;
+  padding: 30px 20px 0 20px;
+  margin: 20px 15px;
+}
 
-  .ahorro-texto ul {
-    order: 3;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
+/* VIDEO */
+.lulo-ahorro .ahorro-imagen video {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  border-radius: 25px;
+  background: transparent;
+  object-fit: cover;
+  margin-top: -100px;
+}
 
-  .btns {
-    order: 4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
+/* ⚪ BLOQUE INFERIOR (BLANCO) */
+.ahorro-texto ul {
+  order: 3;
+  background: #ffffff;
+  margin: 0;
+  padding: 30px 20px 20px 20px;
+}
 
-  /* VIDEO SOLO MOBILE */
-  .lulo-ahorro .ahorro-imagen img {
-    display: none;
-  }
+/* BOTONES */
+.btns {
+  order: 4;
+  background: #ffffff;
+  padding-bottom: 30px;
 
-  .lulo-ahorro .ahorro-imagen video {
-    /*display: block;
-    max-width: 260px;
-    width: 100%;
-    border-radius: 25px;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
 
-    width: 400px;
-    transform: translateX(-90px);
-    /* ajusta hasta centrar el celular */
-  }
+/* IMPORTANTE */
+.ahorro-texto {
+  display: contents;
+}
+
+/* OCULTAR IMAGEN */
+.lulo-ahorro .ahorro-imagen img {
+  display: none;
+}
 
 
 
