@@ -867,6 +867,11 @@ hr {
   display: block;
 }
 
+.lulo-credito .credito-imagen video {
+    display: none !important;
+  }
+
+
 /* ---------- MEDIA QUERIES ---------- */
 @media (max-width: 1024px) {
 
@@ -936,7 +941,7 @@ hr {
     display: flex;
     flex-direction: column;
     background: #EDEFF2;
-    margin-top: 20px;
+    margin-top: 0px;
   }
 
   /* 🔵 BLOQUE SUPERIOR (GRIS) */
@@ -1027,6 +1032,8 @@ hr {
     flex-direction: column;
     background: #EDEFF2;
     margin-top: 20px;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   /* 🔵 BLOQUE SUPERIOR (GRIS) */
@@ -1049,7 +1056,7 @@ hr {
 
   /* VIDEO */
   .lulo-credito .credito-imagen video {
-    display: block;
+    display: block !important;
     width: 90% !important;
     max-width: 420px !important;
     height: auto !important;
@@ -1072,7 +1079,7 @@ hr {
     padding-left: 100px;
     padding-right: 70px;
     padding-top: 50px;
-    padding-bottom: 40px;
+    padding-bottom: 1px;
     margin-top: -10px !important;
     width: calc(100% + 40px) !important;
     margin-left: -20px !important;
@@ -1087,13 +1094,13 @@ hr {
   .tarjeta-botones {
     order: 4;
     background: #ffffff;
-    padding-top: 20px;
+    padding-top: 1px;
     padding-bottom: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    margin-top: auto;
+    margin-top: 0 !important;
     width: calc(100% + 40px) !important;
     margin-left: -20px !important;
     box-sizing: border-box;
@@ -1103,6 +1110,89 @@ hr {
   .credito-texto {
     display: contents;
   }
+
+
+  /*-----------------------------------------------------------------------*/
+  /* --- LULO TARJETA MOBILE --- */
+  .lulo-tarjeta {
+    display: flex;
+    flex-direction: column;
+    background: #EDEFF2;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* IMAGEN ARRIBA */
+  .lulo-tarjeta .tarjeta-imagen {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 25px 0 25px;
+  }
+
+  .lulo-tarjeta .tarjeta-imagen img {
+    width: 90% !important;
+    max-width: 420px !important;
+    height: auto !important;
+    margin-left: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  /* TÍTULO */
+  .tarjeta-texto h2 {
+    order: 2;
+    text-align: left !important;
+    font-size: 1.9rem !important;
+    margin: 20px 0 !important;
+    padding: 0 25px !important;
+  }
+
+  /* LISTA */
+  .tarjeta-texto ul {
+    order: 3;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    padding: 0 25px 0 45px !important;
+    margin: 0 !important;
+  }
+
+  .tarjeta-texto ul li {
+    margin-bottom: 15px;
+  }
+
+  /* BOTONES */
+  .tarjeta-texto .tarjeta-botones {
+    order: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px !important;
+    padding: 0 25px 30px 25px !important;
+    background: transparent !important;
+  }
+
+  /* IMPORTANTE */
+  .tarjeta-texto {
+    display: contents;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
