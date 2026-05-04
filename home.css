@@ -881,6 +881,7 @@ hr {
   .info-container {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
 
   /* Convertimos el bloque de texto en columna */
@@ -928,13 +929,7 @@ hr {
   }
 
 
-
-
-
-
-
-
-
+  /*-----------------------------------------------------------------------*/
   /* --- LULO AHORRO MOBILE --- */
   /* CONTENEDOR */
   .lulo-ahorro {
@@ -958,8 +953,8 @@ hr {
   /* TAMBIÉN METEMOS EL TÍTULO EN EL GRIS */
   .ahorro-texto h2 {
     order: 1;
-    text-align: center;
-    padding: 30px 20px 0 20px;
+    text-align: left !important;
+    padding: 30px 30px 0 30px;
     margin: 20px 15px;
   }
 
@@ -974,7 +969,7 @@ hr {
     background: transparent;
     object-fit: cover;
     margin-top: -20px;
-    margin-bottom: 20px;
+    margin-bottom: -11px !important;
   }
 
 
@@ -982,9 +977,20 @@ hr {
   .ahorro-texto ul {
     order: 3;
     background: #ffffff;
-    margin: 0;
-    padding: 30px 20px 20px 20px;
-    margin-top: -10px;
+    margin: 0 !important;
+    padding-left: 100px;
+    padding-right: 70px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    margin-top: -10px !important;
+    width: calc(100% + 40px) !important;
+    margin-left: -20px !important;
+    box-sizing: border-box;
+  }
+
+  .ahorro-texto ul li {
+    margin-bottom: 15px;
+    /* ajusta el valor a tu gusto */
   }
 
   /* BOTONES */
@@ -992,12 +998,14 @@ hr {
     order: 4;
     background: #ffffff;
     padding-bottom: 30px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
     margin-top: auto;
+    width: calc(100% + 40px) !important;
+    margin-left: -20px !important;
+    box-sizing: border-box;
   }
 
   /* IMPORTANTE */
@@ -1009,6 +1017,95 @@ hr {
   .lulo-ahorro .ahorro-imagen img {
     display: none;
   }
+
+
+  /*-----------------------------------------------------------------------*/
+  /* --- LULO CRÉDITO --- */
+  /* CONTENEDOR */
+  .lulo-credito {
+    display: flex;
+    flex-direction: column;
+    background: #EDEFF2;
+    margin-top: 20px;
+  }
+
+  /* 🔵 BLOQUE SUPERIOR (GRIS) */
+  .lulo-credito .credito-imagen {
+    order: 2;
+    padding: 20px 20px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: transparent !important;
+  }
+
+  /* TÍTULO EN EL GRIS */
+  .credito-texto h2 {
+    order: 1;
+    text-align: left !important;
+    padding: 30px 30px 0 30px;
+    margin: 20px 15px;
+  }
+
+  /* VIDEO */
+  .lulo-credito .credito-imagen video {
+    display: block;
+    width: 90% !important;
+    max-width: 420px !important;
+    height: auto !important;
+    border-radius: 25px 25px 0 0;
+    object-fit: cover;
+    margin-top: -20px;
+    margin-bottom: -11px !important;
+  }
+
+  /* OCULTAR IMAGEN */
+  .lulo-credito .credito-imagen img {
+    display: none;
+  }
+
+  /* ⚪ BLOQUE INFERIOR (BLANCO) */
+  .credito-texto ul {
+    order: 3;
+    background: #ffffff;
+    margin: 0 !important;
+    padding-left: 100px;
+    padding-right: 70px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    margin-top: -10px !important;
+    width: calc(100% + 40px) !important;
+    margin-left: -20px !important;
+    box-sizing: border-box;
+  }
+
+  .credito-texto ul li {
+    margin-bottom: 15px;
+  }
+
+  /* BOTONES */
+  .tarjeta-botones {
+    order: 4;
+    background: #ffffff;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto;
+    width: calc(100% + 40px) !important;
+    margin-left: -20px !important;
+    box-sizing: border-box;
+  }
+
+  /* IMPORTANTE */
+  .credito-texto {
+    display: contents;
+  }
+
+
+
 
 
 
