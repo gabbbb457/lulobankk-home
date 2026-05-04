@@ -34,10 +34,11 @@ body {
   align-items: center;
   background-color: #fff;
   padding: 0px 0px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   transform: scale(0px);
   transition: all 0.5s ease-in-out;
 }
+
 .navbar.shrink {
   padding: -10px 60px;
 }
@@ -50,7 +51,7 @@ body {
 .menu {
   display: flex;
   justify-content: center;
-  background-color: #fff; 
+  background-color: #fff;
   padding: 20px;
 }
 
@@ -63,32 +64,34 @@ body {
 }
 
 .menu ul li a {
-  position: relative; 
+  position: relative;
   text-decoration: none;
   color: #000;
   font-weight: 600;
   font-family: 'Gilroy', sans-serif;
   transition: color 0.3s ease;
 }
-.menu ul li a button{
-  position: relative; 
+
+.menu ul li a button {
+  position: relative;
   text-decoration: none;
   color: #000;
   font-weight: 600;
   font-family: 'Gilroy', sans-serif;
-  transition: color 0.3s ease;  
+  transition: color 0.3s ease;
 }
+
 .menu ul li a::after {
   content: "";
   position: absolute;
-  top: 100%; 
+  top: 100%;
   left: 0;
   width: 0;
   height: 10px;
   background-color: #EBFF00;
   transition: width 0.3s ease-in-out;
   transform-origin: left;
-  
+
 }
 
 .menu ul li a:hover::after {
@@ -105,17 +108,20 @@ body {
   transition: all 0.6s ease;
   margin-left: 20px;
   gap: 8px;
-  
+
 }
+
 .cta::after {
   content: " > ";
   opacity: 1;
   transform: translateX(1px);
   transition: opacity 0.3s ease, transform 0.6s ease;
 }
+
 .btn-flecha:hover {
-  gap: 8px; 
+  gap: 8px;
 }
+
 .cta:hover::after {
   content: " > ";
   opacity: 1;
@@ -127,8 +133,10 @@ body {
 .menu ul li.dropdown {
   position: relative;
 }
+
 .menu-toggle {
-  display: none; /* Oculto en escritorio */
+  display: none;
+  /* Oculto en escritorio */
   cursor: pointer;
   font-size: 30px;
 }
@@ -164,9 +172,13 @@ body {
 
 
 
+
+
+
+
 /* ---------- SECCIÓN PRINCPAL ---------- */
 .hero {
-  background-color: #E8FF00; 
+  background-color: #E8FF00;
   text-align: center;
   padding: 60px 20px;
   z-index: 100;
@@ -182,6 +194,7 @@ body {
   color: #111;
   margin-bottom: 24px;
 }
+
 .hero h2 {
   font-size: 2.1rem;
   font-weight: 600;
@@ -195,6 +208,7 @@ body {
   margin-bottom: 40px;
   color: #333;
 }
+
 
 .btn {
   background-color: #10172B;
@@ -217,11 +231,13 @@ body {
   transform: translateX(1px);
   transition: opacity 0.3s ease, transform 0.6s ease;
 }
+
 .btn:hover::after {
   content: " > ";
   opacity: 1;
   transform: translateX(20px);
 }
+
 /* ---------- SECCIÓN IMAGEN SCROLL ---------- */
 .scroll-image {
   position: fixed;
@@ -237,7 +253,7 @@ body {
 
 /* ---------- SECCIÓN INFORMATIVA ---------- */
 .info-section {
-  background-color: #10172B; 
+  background-color: #10172B;
   color: #fff;
   padding: 100px 100px;
 }
@@ -246,18 +262,18 @@ body {
   display: grid;
   align-items: center;
   grid-template-columns: 50% 50%;
-  
+
   height: 100%;
   width: 100%;
   background-color: #10172B;
-  
+
 }
 
 .info-text {
-    background-color: #ffffff;
-    padding: 100px;
-    flex: 1;
-    min-width: 320px;
+  background-color: #ffffff;
+  padding: 100px;
+  flex: 1;
+  min-width: 320px;
 }
 
 .info-text h2 {
@@ -312,7 +328,8 @@ body {
 
 /* Borde del teléfono */
 .info-image img {
-  width: 220px;        /* ← un poco más grande */
+  width: 220px;
+  /* ← un poco más grande */
   height: auto;
   position: relative;
   z-index: 2;
@@ -321,14 +338,16 @@ body {
 
 /* Video centrado dentro del borde */
 .info-image video {
-  width: 200px;        /* ← ajusta hasta que encaje en el borde */
+  width: 200px;
+  /* ← ajusta hasta que encaje en el borde */
   height: auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  border-radius: 30px; /* ← ajusta hasta que las esquinas coincidan */
+  border-radius: 30px;
+  /* ← ajusta hasta que las esquinas coincidan */
 }
 
 .section-background {
@@ -338,7 +357,8 @@ body {
   top: 0;
   left: 0;
   z-index: -2;
-  background-color: #10172B; /* ← cambia aquí el color de fondo */
+  background-color: #10172B;
+  /* ← cambia aquí el color de fondo */
 }
 
 .section-background-part {
@@ -347,7 +367,8 @@ body {
   width: 49%;
   top: 0;
   margin-left: 10px;
-  background-color: #ffffff; /* ← cambia aquí el color de la parte derecha */
+  background-color: #ffffff;
+  /* ← cambia aquí el color de la parte derecha */
 }
 
 
@@ -375,10 +396,10 @@ body {
 }
 
 .ahorro-texto {
-  padding: 60px 60px 60px 120px;  
+  padding: 60px 60px 60px 120px;
   display: flex;
   flex-direction: column;
-  justify-content: center;       
+  justify-content: center;
 }
 
 .ahorro-texto h2 {
@@ -409,16 +430,19 @@ body {
   text-decoration: none;
   transition: 0.2s ease;
 }
+
 .btn-primary:hover {
   background-color: #000;
   color: #EBFF00;
 }
+
 .btn-primary::after {
   content: " > ";
   opacity: 0;
   transform: translateX(1px);
   transition: opacity 0.3s ease, transform 0.6s ease;
 }
+
 .btn-primary:hover::after {
   content: " > ";
   opacity: 1;
@@ -457,7 +481,7 @@ body {
 
 
 .credito-imagen {
-  background: #FFF66F; 
+  background: #FFF66F;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -477,11 +501,11 @@ body {
   flex-direction: column;
   justify-content: center;
 
-  max-width: 520px;     
-  margin: 0 auto;       
+  max-width: 520px;
+  margin: 0 auto;
 
-  padding: 40px 60px;   
-  gap: 20px;   
+  padding: 40px 60px;
+  gap: 20px;
 }
 
 .credito-texto h2 {
@@ -504,7 +528,7 @@ body {
 .lulo-tarjeta {
   display: grid;
   grid-template-columns: 50% 50%;
-  background: #DFE2E7; 
+  background: #DFE2E7;
   padding: 120px 0;
   align-items: center;
 }
@@ -554,12 +578,14 @@ body {
   background-color: #000;
   color: #EBFF00;
 }
+
 .btn-yellow::after {
   content: " > ";
   opacity: 0;
   transform: translateX(0px);
   transition: opacity 0.3s ease, transform 0.6s ease;
 }
+
 .btn-yellow:hover::after {
   content: " > ";
   opacity: 1;
@@ -586,6 +612,7 @@ body {
   border-radius: 20px;
   margin-left: 100px;
 }
+
 /* ---------- SECCIÓN ECOSISTEMA ---------- */
 
 .ecosistema {
@@ -619,6 +646,7 @@ body {
   width: 260px;
   filter: drop-shadow(0px 5px 25px rgba(28, 35, 51, 0.6));
 }
+
 .phone-left {
   width: 400px;
   height: 300px;
@@ -640,12 +668,12 @@ body {
 }
 
 .item-deco {
-    margin-top: 88px;
-    display: grid;
-    justify-items: center;
+  margin-top: 88px;
+  display: grid;
+  justify-items: center;
 }
 
-.home-legals{
+.home-legals {
   margin: 32px 0;
   padding: 0 5%;
   font-size: .99rem;
@@ -665,7 +693,7 @@ body {
 .footer a {
   color: #ffffff;
   text-decoration: none;
-  font-style:bold;
+  font-style: bold;
   font-size: 17px;
   transition: .3s;
 }
@@ -696,7 +724,7 @@ body {
 
 .footer-col ul li {
   margin: 20px 0;
-  
+
 }
 
 .footer-social {
@@ -704,6 +732,7 @@ body {
   gap: 15px;
   margin-top: 20px;
 }
+
 .footer-col li {
   list-style: none;
 }
@@ -717,6 +746,7 @@ body {
   font-style: bold;
   transition: .3s ease-in-out;
 }
+
 .icon:hover {
   background: #EBFF00;
   color: #000000;
@@ -803,7 +833,7 @@ hr {
   font-size: 100px;
   margin-bottom: 45px;
   color: #667a99;
-  
+
 }
 
 .cert-group {
@@ -826,454 +856,622 @@ hr {
 }
 
 
+
+
+/* ===== DESKTOP ===== */
+.lulo-ahorro .ahorro-imagen video {
+  display: none;
+}
+
+.lulo-ahorro .ahorro-imagen img {
+  display: block;
+}
+
 /* ---------- MEDIA QUERIES ---------- */
 @media (max-width: 1024px) {
 
-    /* 1. HEADER (Menu Hamburguesa) */
-    .navbar {
-      padding: 15px 20px;
-      align-items: center; 
-    }
+  /*HOLA GABII AQUÍ ESTOY HACIENDO LA VERSION MOBILE :)) JUNGKOOK T AMA*/
 
-    body {
-      overflow-x: hidden;
-      position: relative;
-    }
-    .app {
-      position: relative;
-      
-      padding-bottom: 0; 
-      padding-top: 0;
-    }
+  /*---CONTAINER DE INFO---*/
+  .info-container {
+    display: flex;
+    flex-direction: column;
+  }
 
+  /* Convertimos el bloque de texto en columna */
+  .info-text {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .logo img {
-      height: 40px; 
-      margin-left: 0px;
-      margin-top: 10px;
-    }
+  /* Reservamos espacio para el video */
+  .info-text ul {
+    margin-bottom: 500px;
+    /* AJUSTABLE */
+  }
 
-    .cta {
-      display: flex;
-      padding: 10px 20px;
-    }
+  .info-text a {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+  }
 
-    /* Estilos del ícono de hamburguesa (mostrar) */
-    .menu-toggle {
-      display: flex; 
-      width: 30px;
-      height: 30px;
-      z-index: 101;
-      margin-bottom: 18px;
-      
-    }
-    
-    /* Configuración del Menú Desplegable */
-    .menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100%;
-        background-color: #fff;
-        padding: 80px 40px 20px 40px;
-        transition: transform 0.4s ease-in-out;
-        transform: translateX(-100%); 
-        flex-direction: column;
-        justify-content: flex-start;
-        z-index: 100;
-        display: block; 
-    }
-    
-    /* Clase que se activa con JavaScript */
-    .menu.active {
-        transform: translateX(0); 
-    }
-    
-    .menu ul {
-        flex-direction: column;
-        gap: 0;
-        padding: 0;
-        width: 100%;
-        text-align: center;
-    }
+  /* VIDEO (sube visualmente al espacio reservado) */
+  .info-image {
+    display: flex;
+    justify-content: center;
+    margin-top: -590px;
+    /* AJUSTABLE */
+    margin-bottom: 120px;
+  }
 
-    .menu ul li {
-        margin-bottom: 20px; 
-        width: 100%;
-    }
+  /* Tamaños del mockup */
+  .info-image img {
+    width: 200px;
+  }
 
-    .menu ul li a {
-        font-size: 1.5rem;
-        font-weight: 500;
-        display: block;
-        padding: 10px 0;
-        color: #0D1321;
-    }
-    
-    .menu ul li a::after {
-        display: none; 
-    }
+  .info-image video {
+    width: 180px;
+  }
 
-    /* DROPDOWN (Estilo de Acordeón simple) */
-    .dropdown-btn {
-        font-weight: 600 !important; 
-    }
-    
-    .dropdown-menu {
-        position: static; 
-        background: none;
-        padding: 10px 0 10px 20px;
-        margin-top: 5px;
-        min-width: unset;
-        display: none; 
-        flex-direction: column;
-        gap: 5px;
-        border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-    }
-
-    .dropdown-menu a {
-        font-size: 1.1rem;
-        padding: 5px 0;
-        opacity: 0.8;
-    }
-
-    .section-background {
-      display: none; 
-    }
-
-    .hero {
-      padding: 40px 20px;
-    }
-    
-    .hero h1 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-        margin-bottom: 30px;
-    }
-    
-    .info-container {
-      grid-template-columns: 1fr;
-      background-color: transparent !important; 
-    }
-    .lulo-ahorro, 
-    .lulo-credito, 
-    .lulo-tarjeta {
-        grid-template-columns: 1fr; 
-    }
-
-    .info-text{
-      background-color: #1B2033;
-      padding: 50px;
-    }
-    .info-text h2{
-      margin-top: 30px;
-      color:#DFE2E7;
-      font-size: 23px;
-      text-align: center;
-    }
-    .info-text ul{
-      color:#DFE2E7;
-      font-size: 14px;
-    }
-    .ahorro-texto{
-      padding: 30px 50px;
-      background-color: #DFE2E7;
-    }
-    .ahorro-texto h2{
-      margin-top: 30px;
-      color:#1B2033;
-      font-size: 20px;
-      text-align: left;
-    }
-    .credito-texto{
-      padding-left: 40px; 
-      padding-right: 40px;      
-    }
-    .tarjeta-texto {
-        padding: 60px 20px; 
-        padding-left: 20px; 
-        padding-right: 20px;
-    }
-    
-    
-    .ahorro-texto h2{
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-    }
-    .ahorro-texto ul{
-        font-size: 16px;
-        margin-bottom: 20px;
-        margin-right: 30px;
-        margin-left: 30px;
-    }
-    .btns {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-    .btn-primary{
-        width: 70%;
-        text-align: center;
-        height: 50px;
-    }
-    .credito-texto h2{
-        font-size: 2rem;
-        margin-bottom: 20px;
-    }
-    .credito-texto ul{
-        font-size: 16px;
-        margin-bottom: 20px;
-        margin-right: 30px;
-        margin-left: 30px;
-    }
-    .tarjeta-texto h2 {
-        font-size: 2.2rem;
-        margin-bottom: 20px;
-    }
-    .app-links {
-        flex-direction: row;
-        gap: 5px;
-    }
-    .app-links img {
-      align-items: center;
-        height: 45px; 
-    }
-
-
-    .ahorro-imagen,
-    .credito-imagen{
-      display: none;
-    }
-    .tarjeta-imagen {
-        order: 1; 
-        min-height: 50vh;
-    }
-
-    .lulo-ahorro .ahorro-texto {
-        order: 1; 
-        padding-top: 0;
-    }
-    .lulo-ahorro .ahorro-imagen {
-        order: 2;
-        min-height: 40vh;
-    }
-
-    .ahorro-imagen video,
-    .ahorro-imagen img {
-        max-height: 300px; 
-        width: auto;
-    }
-
-  
-    .lulo-ahorro {
-        grid-template-columns: 1fr;
-        min-height: auto; 
-    }
-    .ahorro-imagen {
-        background: #1F2A44;
-        min-height: 40vh; 
-        padding: 20px 0;
-    }
-
-    /* 2. TARJETA LULO */
-    .lulo-tarjeta {
-        grid-template-columns: 1fr; 
-        background: #DFE2E7; 
-        padding: 60px 0; 
-        align-items: center;
-    }
-
-    .tarjeta-imagen {
-        order: 1; 
-        max-width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px 0;
-    }
-    .tarjeta-imagen img {
-        margin-left: 0; 
-        width: 100%;
-        max-width: 350px;
-    }
-
-    .tarjeta-texto {
-      order: 2; 
-      padding: 0 40px; 
-    }
-
-    .tarjeta-texto h2 {
-      font-size: 1.9rem; 
-      text-align: left; 
-    }
-
-    .tarjeta-texto ul {
-        font-size: 1rem;
-        line-height: 1.5;
-        margin: 20px 0;
-        padding: 0 15px; 
-    }
-
-    .tarjeta-botones {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center; 
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .btn-yellow {
-        width: 100%;
-        max-width: 250px; 
-        text-align: center;
-    }
-
-    .btn-link {
-        margin-top: 10px; 
-    }
-
-    /* 3. ECOSISTEMA */
-    .ecosistema {
-        padding: 80px 20px;
-    }
-    .ecosistema-content h2 {
-        font-size: 25px;
-    }
-    .ecosistema-content p {
-        font-size: 15px;
-    }
-    .ecosistema-subtext {
-        font-size: 14px;
-        margin-top: 0px;
-    }
-    .phones {
-        gap: 30px;
-        margin: 40px 0;
-    }
-
-    .phone-left {
-        width: 100%;
-        height: auto;
-        max-width: 300px; 
-    }
-
-    .btn-yellow {
-        width: 70%;
-        text-align: center;
-        height: 50px;
-    }
-    /* 4. FOOTER */
-    .footer {
-        padding: 40px 20px;
-    }
-    
-    .footer-top {
-      align-content: center;
-      grid-template-columns: 1fr; 
-      gap: 30px;
-      text-align: center;
-    }
-
-    .footer-col h4 {
-        margin-bottom: 15px;
-    }
-
-    .footer-col ul li {
-
-        margin: 10px 0;
-    }
-
-    .footer-col li a {
-        display: grid;
-        flex-direction: row;
-    }
+  /* BOTONES (quedan debajo del video) */
+  .app-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: -30px;
+    margin-bottom: 50px;
+  }
 
 
 
-    .icon {
-      align-items: center;
-      padding: 10px 15px; 
-      font-size: 14px;
-      width: 90px;
-      height: 90px;
-      text-align: center;
-    }
 
-    .footer-apps {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 30px;
-        
-    }
 
-    .footer-apps img {
-  width: 130px;
-  margin-top: 0;
-  border: 1px solid #ffffff;  /* ← borde blanco */
-  border-radius: 8px;  
-    }
 
-        /* Términos y Condiciones */
-    .footer-terms {
-      grid-template-columns: 1fr; 
-      gap: 20px;
-      padding: 20px 0;
-        
-    }
 
-    .terms-left {
-      text-align: center; 
-      max-width: 100%;
-        
-    }
-    .terms-left h3 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
 
-    .terms-right {
-      align-items: center;
-      display: flex; 
-      flex-direction: column; 
-      text-align: center; 
-      font-size: initial; 
-      max-width: 100%;
-    }
+  /*---CONTAINER LULO CUENTA---*/
+  .lulo-ahorro {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 
-    
-    .terms-right .rights {
-        order: 2; 
-        margin-top: 20px; 
-    }
+  /* Convertimos el texto en "transparente" al grid */
+  .ahorro-texto {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .terms-right .cert-group {
-        order: 1; 
-        margin-bottom: 20px; 
-    }
-    .rights {
-        font-size: 14px; 
-        margin-bottom: 20px;
-    }
+  /* ORDEN REAL */
 
-    .cert-group {
-        display: flex;
-        align-content: center;
-        flex-direction: column; 
-        align-items: center;
-        justify-content: center; 
-        gap: 15px; 
-    }
+  .ahorro-texto h2 {
+    order: 1;
+    text-align: center;
+    margin-top: 10px;
+  }
 
-    .cert img,
-    .fogafin {
-        height: 50px;
-    }
+  .lulo-ahorro .ahorro-imagen {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    margin-top: -270px;
+  }
+
+  .ahorro-texto ul {
+    order: 3;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .btns {
+    order: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* VIDEO SOLO MOBILE */
+  .lulo-ahorro .ahorro-imagen img {
+    display: none;
+  }
+
+  .lulo-ahorro .ahorro-imagen video {
+    /*display: block;
+    max-width: 260px;
+    width: 100%;
+    border-radius: 25px;*/
+
+    width: 400px;
+    transform: translateX(-90px);
+    /* ajusta hasta centrar el celular */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* 1. HEADER (Menu Hamburguesa) */
+  .navbar {
+    padding: 15px 20px;
+    align-items: center;
+  }
+
+  body {
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .app {
+    position: relative;
+
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+
+  .logo img {
+    height: 40px;
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+
+  .cta {
+    display: flex;
+    padding: 10px 20px;
+  }
+
+  /* Estilos del ícono de hamburguesa (mostrar) */
+  .menu-toggle {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    z-index: 101;
+    margin-bottom: 18px;
+
+  }
+
+  /* Configuración del Menú Desplegable */
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    padding: 80px 40px 20px 40px;
+    transition: transform 0.4s ease-in-out;
+    transform: translateX(-100%);
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 100;
+    display: block;
+  }
+
+  /* Clase que se activa con JavaScript */
+  .menu.active {
+    transform: translateX(0);
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu ul li {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .menu ul li a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    display: block;
+    padding: 10px 0;
+    color: #0D1321;
+  }
+
+  .menu ul li a::after {
+    display: none;
+  }
+
+  /* DROPDOWN (Estilo de Acordeón simple) */
+  .dropdown-btn {
+    font-weight: 600 !important;
+  }
+
+  .dropdown-menu {
+    position: static;
+    background: none;
+    padding: 10px 0 10px 20px;
+    margin-top: 5px;
+    min-width: unset;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+
+  .dropdown-menu a {
+    font-size: 1.1rem;
+    padding: 5px 0;
+    opacity: 0.8;
+  }
+
+  .section-background {
+    display: none;
+  }
+
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+
+  .info-container {
+    grid-template-columns: 1fr;
+    background-color: transparent !important;
+  }
+
+  .lulo-ahorro,
+  .lulo-credito,
+  .lulo-tarjeta {
+    grid-template-columns: 1fr;
+  }
+
+  .info-text {
+    background-color: #1B2033;
+    padding: 50px;
+  }
+
+  .info-text h2 {
+    margin-top: 30px;
+    color: #DFE2E7;
+    font-size: 23px;
+    text-align: center;
+  }
+
+  .info-text ul {
+    color: #DFE2E7;
+    font-size: 14px;
+  }
+
+  .ahorro-texto {
+    padding: 30px 50px;
+    background-color: #DFE2E7;
+  }
+
+  .ahorro-texto h2 {
+    margin-top: 30px;
+    color: #1B2033;
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .credito-texto {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .tarjeta-texto {
+    padding: 60px 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
+  .ahorro-texto h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .ahorro-texto ul {
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  .btns {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .btn-primary {
+    width: 70%;
+    text-align: center;
+    height: 50px;
+  }
+
+  .credito-texto h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .credito-texto ul {
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  .tarjeta-texto h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+
+  .app-links {
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .app-links img {
+    align-items: center;
+    height: 45px;
+  }
+
+
+  .ahorro-imagen,
+  .credito-imagen {
+    display: none;
+  }
+
+  .tarjeta-imagen {
+    order: 1;
+    min-height: 50vh;
+  }
+
+  .lulo-ahorro .ahorro-texto {
+    order: 1;
+    padding-top: 0;
+  }
+
+  .lulo-ahorro .ahorro-imagen {
+    order: 2;
+    min-height: 40vh;
+  }
+
+  .ahorro-imagen video,
+  .ahorro-imagen img {
+    max-height: 300px;
+    width: auto;
+  }
+
+
+  .lulo-ahorro {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .ahorro-imagen {
+    background: #1F2A44;
+    min-height: 40vh;
+    padding: 20px 0;
+  }
+
+  /* 2. TARJETA LULO */
+  .lulo-tarjeta {
+    grid-template-columns: 1fr;
+    background: #DFE2E7;
+    padding: 60px 0;
+    align-items: center;
+  }
+
+  .tarjeta-imagen {
+    order: 1;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .tarjeta-imagen img {
+    margin-left: 0;
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .tarjeta-texto {
+    order: 2;
+    padding: 0 40px;
+  }
+
+  .tarjeta-texto h2 {
+    font-size: 1.9rem;
+    text-align: left;
+  }
+
+  .tarjeta-texto ul {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 20px 0;
+    padding: 0 15px;
+  }
+
+  .tarjeta-botones {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .btn-yellow {
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+  }
+
+  .btn-link {
+    margin-top: 10px;
+  }
+
+  /* 3. ECOSISTEMA */
+  .ecosistema {
+    padding: 80px 20px;
+  }
+
+  .ecosistema-content h2 {
+    font-size: 25px;
+  }
+
+  .ecosistema-content p {
+    font-size: 15px;
+  }
+
+  .ecosistema-subtext {
+    font-size: 14px;
+    margin-top: 0px;
+  }
+
+  .phones {
+    gap: 30px;
+    margin: 40px 0;
+  }
+
+  .phone-left {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
+
+  .btn-yellow {
+    width: 70%;
+    text-align: center;
+    height: 50px;
+  }
+
+  /* 4. FOOTER */
+  .footer {
+    padding: 40px 20px;
+  }
+
+  .footer-top {
+    align-content: center;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-col h4 {
+    margin-bottom: 15px;
+  }
+
+  .footer-col ul li {
+
+    margin: 10px 0;
+  }
+
+  .footer-col li a {
+    display: grid;
+    flex-direction: row;
+  }
+
+
+
+  .icon {
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 14px;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+  }
+
+  .footer-apps {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+
+  }
+
+  .footer-apps img {
+    width: 130px;
+    margin-top: 0;
+    border: 1px solid #ffffff;
+    /* ← borde blanco */
+    border-radius: 8px;
+  }
+
+  /* Términos y Condiciones */
+  .footer-terms {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 0;
+
+  }
+
+  .terms-left {
+    text-align: center;
+    max-width: 100%;
+
+  }
+
+  .terms-left h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .terms-right {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: initial;
+    max-width: 100%;
+  }
+
+
+  .terms-right .rights {
+    order: 2;
+    margin-top: 20px;
+  }
+
+  .terms-right .cert-group {
+    order: 1;
+    margin-bottom: 20px;
+  }
+
+  .rights {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .cert-group {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .cert img,
+  .fogafin {
+    height: 50px;
+  }
 }
