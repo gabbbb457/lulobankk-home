@@ -729,33 +729,55 @@ body {
 
 .footer-social {
   display: flex;
-  gap: 15px;
+  flex-direction: row;
+  gap: 10px;
   margin-top: 20px;
-}
-
-.footer-col li {
-  list-style: none;
+  align-items: center;
 }
 
 .icon {
   background: #162237;
-  padding: 40px 40px;
-  display: inline-block;
+  padding: 28px 32px;          
+  display: inline-flex;   /* ← para centrar el ícono adentro */
+  align-items: center;
+  justify-content: center;
   color: white;
   cursor: pointer;
-  font-style: bold;
   transition: .3s ease-in-out;
+}
+
+.icon img {
+  width: 25px;            
+  height: 25px;
 }
 
 .icon:hover {
   background: #EBFF00;
-  color: #000000;
+}
+
+.footer-apps {
+  display: flex;          
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.footer-col ul {
+  list-style: none;   /* ← esto quita los puntos */
+  padding: 0;
+  margin: 0;
 }
 
 .footer-apps img {
-  width: 150px;
-  margin-top: 50px;
-  text-align: justify;
+  width: 115px;
+  height: auto;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
 .footer-bottom {
@@ -1178,29 +1200,6 @@ hr {
   .tarjeta-texto {
     display: contents;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
