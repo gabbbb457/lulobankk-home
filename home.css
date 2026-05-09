@@ -65,12 +65,17 @@ body {
 
 .menu ul li a {
   position: relative;
+  display: inline-block;
+  /**/
   text-decoration: none;
   color: #000;
   font-weight: 600;
   font-family: 'Gilroy', sans-serif;
   transition: color 0.3s ease;
+  z-index: 1;
+  /**/
 }
+
 
 .menu ul li a button {
   position: relative;
@@ -84,18 +89,19 @@ body {
 .menu ul li a::after {
   content: "";
   position: absolute;
-  top: 100%;
   left: 0;
-  width: 0;
-  height: 10px;
-  background-color: #EBFF00;
-  transition: width 0.3s ease-in-out;
-  transform-origin: left;
-
+  right: 0;
+  bottom: -17px;
+  height: 25px;
+  background: #EBFF00;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
 }
 
 .menu ul li a:hover::after {
-  width: 100%;
+  transform: scaleX(0.55);
 }
 
 .cta {
@@ -143,8 +149,9 @@ body {
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: calc(100% + 8px);
+  left: 20%;
+  transform: translateX(-20%);
   background: #ffffff;
   padding: 18px 20px;
   display: none;
@@ -163,14 +170,17 @@ body {
   font-size: 14px;
   text-decoration: none;
   border-bottom: 1px dotted transparent;
-  transition: all .3s;
+  transition: color 0.3s ease;
+}
+
+.dropdown-menu a::after {
+  display: none;
 }
 
 .dropdown-menu a:hover {
   opacity: .5;
+  color: #667a99;
 }
-
-
 
 
 
@@ -735,35 +745,61 @@ body {
   align-items: center;
 }
 
+
 .icon {
+  position: relative;
+  overflow: hidden;
+
   background: #162237;
-  padding: 28px 32px;          
-  display: inline-flex;   /* ← para centrar el ícono adentro */
+  padding: 28px 32px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: white;
+
   cursor: pointer;
-  transition: .3s ease-in-out;
+}
+
+/* capa amarilla que sube */
+.icon::before {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  bottom: -100%;
+
+  width: 100%;
+  height: 100%;
+
+  background: #EBFF00;
+
+  transition: bottom 0.35s ease-in-out;
+
+  z-index: 0;
+}
+
+/* hace que el amarillo suba */
+.icon:hover::before {
+  bottom: 0;
 }
 
 .icon img {
-  width: 25px;            
+  width: 25px;
   height: 25px;
-}
 
-.icon:hover {
-  background: #EBFF00;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-apps {
-  display: flex;          
+  display: flex;
   flex-direction: row;
   gap: 10px;
   margin-top: 30px;
 }
 
 .footer-col ul {
-  list-style: none;   /* ← esto quita los puntos */
+  list-style: none;
+  /* ← esto quita los puntos */
   padding: 0;
   margin: 0;
 }
@@ -890,8 +926,8 @@ hr {
 }
 
 .lulo-credito .credito-imagen video {
-    display: none !important;
-  }
+  display: none !important;
+}
 
 
 /* ---------- MEDIA QUERIES ---------- */
@@ -1205,6 +1241,11 @@ hr {
 
 
 
+
+
+
+
+  
 
 
   /* 1. HEADER (Menu Hamburguesa) */
