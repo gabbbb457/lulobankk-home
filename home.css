@@ -940,6 +940,9 @@ hr {
   DE BETEESE NOOO BTS NO DEBISTE HABER HECHO ESO AHORA TENDRÉ QUE
   TIRARME DEL BALCÓN BORAHAE SHIBAL*/
 
+
+
+
   /*---CONTAINER DE INFO---*/
   .info-container {
     display: flex;
@@ -1037,7 +1040,7 @@ hr {
 
 
   /* ⚪ BLOQUE INFERIOR (BLANCO)*/
-  .ahorro-texto ul {
+  /*.ahorro-texto ul {
     order: 3;
     background: #ffffff;
     margin: 0 !important;
@@ -1049,7 +1052,26 @@ hr {
     width: calc(100% + 40px) !important;
     margin-left: -20px !important;
     box-sizing: border-box;
+  }*/
+
+  .ahorro-texto ul {
+    order: 3;
+    background: #ffffff;
+
+    margin: 0 !important;
+
+    padding: 40px 30px !important;
+
+    margin-top: -10px !important;
+
+    width: 100% !important;
+
+    margin-left: 0 !important;
+
+    box-sizing: border-box;
   }
+
+
 
   .ahorro-texto ul li {
     margin-bottom: 15px;
@@ -1057,7 +1079,7 @@ hr {
   }
 
   /* BOTONES */
-  .btns {
+  /*.btns {
     order: 4;
     background: #ffffff;
     padding-bottom: 30px;
@@ -1068,6 +1090,28 @@ hr {
     margin-top: auto;
     width: calc(100% + 40px) !important;
     margin-left: -20px !important;
+    box-sizing: border-box;
+  }*/
+
+
+  .btns {
+    order: 4;
+    background: #ffffff;
+
+    padding-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: auto;
+
+    width: 100% !important;
+
+    margin-left: 0 !important;
+
     box-sizing: border-box;
   }
 
@@ -1245,7 +1289,7 @@ hr {
 
 
 
-  
+
 
 
   /* 1. HEADER (Menu Hamburguesa) */
@@ -1259,9 +1303,14 @@ hr {
     position: relative;
   }
 
+  /*HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
   .app {
     position: relative;
-
     padding-bottom: 0;
     padding-top: 0;
   }
@@ -1281,11 +1330,11 @@ hr {
   /* Estilos del ícono de hamburguesa (mostrar) */
   .menu-toggle {
     display: flex;
-    width: 30px;
-    height: 30px;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
     z-index: 101;
-    margin-bottom: 18px;
-
   }
 
   /* Configuración del Menú Desplegable */
@@ -1293,16 +1342,17 @@ hr {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
     width: 100%;
-    background-color: #fff;
-    padding: 80px 40px 20px 40px;
-    transition: transform 0.4s ease-in-out;
+    height: 100vh;
+    background: #f5f5f5;
+    padding: 20px 25px 40px;
     transform: translateX(-100%);
-    flex-direction: column;
-    justify-content: flex-start;
+    transition: transform .4s ease;
     z-index: 100;
-    display: block;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /* Clase que se activa con JavaScript */
@@ -1310,25 +1360,23 @@ hr {
     transform: translateX(0);
   }
 
-  .menu ul {
-    flex-direction: column;
-    gap: 0;
-    padding: 0;
-    width: 100%;
-    text-align: center;
-  }
 
-  .menu ul li {
+  .close-menu {
+    align-self: flex-end;
+    font-size: 2rem;
+    cursor: pointer;
     margin-bottom: 20px;
-    width: 100%;
+    color: #0D1321;
   }
 
-  .menu ul li a {
-    font-size: 1.5rem;
-    font-weight: 500;
-    display: block;
-    padding: 10px 0;
-    color: #0D1321;
+  .menu ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
   }
 
   .menu ul li a::after {
@@ -1340,23 +1388,74 @@ hr {
     font-weight: 600 !important;
   }
 
-  .dropdown-menu {
-    position: static;
-    background: none;
-    padding: 10px 0 10px 20px;
-    margin-top: 5px;
-    min-width: unset;
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+  /* ITEMS PRINCIPALES */
+  .menu ul li {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
   }
 
-  .dropdown-menu a {
-    font-size: 1.1rem;
-    padding: 5px 0;
-    opacity: 0.8;
+  /* TEXTO PRINCIPAL */
+  .menu ul li>a {
+    display: block !important; 
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #111827;
+    text-decoration: none;
+    padding: 0;
+
+  }
+
+  /* DROPDOWN */
+  .dropdown-menu {
+    position: static !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    margin-top: 18px !important;
+    margin-bottom: 10px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    transform: none !important;
+    gap: 0 !important;
+  }
+
+  .dropdown-menu li {
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* LINKS INTERNOS */
+  .dropdown-menu>a {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 1rem !important;
+    font-weight: bold!important;
+    padding: 10px 0 !important;
+    color: black !important;
+    border-top: 1px solid #e5e5e5 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+
+  /* última línea */
+  .dropdown-menu>a:last-child {
+    border: none !important;
+  }
+
+
+  .dropdown-menu.open {
+    display: flex !important;
+  }
+
+  .dropdown-menu a::after {
+    display: none !important;
   }
 
   .section-background {
@@ -1722,5 +1821,11 @@ hr {
   .cert img,
   .fogafin {
     height: 50px;
+  }
+
+  .lulo-ahorro,
+  .lulo-credito,
+  .lulo-tarjeta {
+    overflow-x: hidden;
   }
 }
