@@ -1034,8 +1034,9 @@
     .lulo-ahorro .ahorro-imagen {
       order: 2;
       padding: 20px;
-       min-height: 530px !important;
-      position: relative !important; /*ESTO*/
+      min-height: 530px !important;
+      position: relative !important;
+      /*ESTO*/
       display: flex;
       justify-content: center;
       align-items: center;
@@ -1141,6 +1142,7 @@
     .lulo-credito .credito-imagen {
       order: 2;
       padding: 20px 20px 0 20px;
+      min-height: 250px !important;
       display: flex;
       justify-content: center;
       align-items: flex-end;
@@ -1211,6 +1213,68 @@
     .credito-texto {
       display: contents;
     }
+
+    /* ---------- CELULAR CREDITO ---------- */
+
+    .phone-frame-credito {
+      display: block !important;
+      position: relative !important;
+      width: 320px !important;
+      height: 200px !important;
+      margin: -30px auto 0 auto !important;
+      overflow: hidden !important;
+      border-top: 7px solid black !important;
+      border-left: 7px solid black !important;
+      border-right: 7px solid black !important;
+      border-bottom: none !important;
+      border-radius: 40px 40px 0 0 !important;
+      background: #1f2739 !important;
+    }
+
+    /* VIDEO */
+    .phone-frame-credito video {
+      position: absolute !important;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%) scaleX(1.07);
+      width: calc(100% + 10px) !important;
+      height: calc(100% - 6px) !important;
+      object-fit: cover !important;
+      display: block !important;
+      border-radius: 30px 30px 0 0 !important;
+    }
+
+    /* NOTCH */
+    .phone-frame-credito::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
+      height: 20px;
+      background: black;
+      border-radius: 0 0 18px 18px;
+      z-index: 10;
+    }
+
+    .marco-web {
+      display: none !important;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     /*-----------------------------------------------------------------------*/
@@ -1648,8 +1712,8 @@
       top: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 160px;
-      height: 30px;
+      width: 140px;
+      height: 20px;
       background: black;
       border-radius: 0 0 18px 18px;
       z-index: 10;
