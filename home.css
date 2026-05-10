@@ -1,1831 +1,1796 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  src: url('./fonts/gilroy-regular-webfont.woff2') format('woff2');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  src: url('./fonts/gilroy-medium-webfont.woff2') format('woff2');
-  font-weight: 500;
-}
-
-/* Fuentes y colores principales */
-body {
-  font-family: 'Gilroy', sans-serif;
-  background-color: #fefefe;
-  color: #111;
-}
-
-/* ---------- HEADER ---------- */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  padding: 0px 0px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transform: scale(0px);
-  transition: all 0.5s ease-in-out;
-}
-
-.navbar.shrink {
-  padding: -10px 60px;
-}
-
-.logo img {
-  height: 60px;
-  margin-left: 50px;
-}
-
-.menu {
-  display: flex;
-  justify-content: center;
-  background-color: #fff;
-  padding: 20px;
-}
-
-.menu ul {
-  list-style: none;
-  display: flex;
-  gap: 50px;
-  margin: 0;
-  padding: 0;
-}
-
-.menu ul li a {
-  position: relative;
-  display: inline-block;
-  /**/
-  text-decoration: none;
-  color: #000;
-  font-weight: 600;
-  font-family: 'Gilroy', sans-serif;
-  transition: color 0.3s ease;
-  z-index: 1;
-  /**/
-}
-
-
-.menu ul li a button {
-  position: relative;
-  text-decoration: none;
-  color: #000;
-  font-weight: 600;
-  font-family: 'Gilroy', sans-serif;
-  transition: color 0.3s ease;
-}
-
-.menu ul li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -17px;
-  height: 25px;
-  background: #EBFF00;
-  z-index: -1;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.3s ease-in-out;
-}
-
-.menu ul li a:hover::after {
-  transform: scaleX(0.55);
-}
-
-.cta {
-  display: inline-flex;
-  background-color: #10172B;
-  color: #fff;
-  text-decoration: none;
-  padding: 40px 60px;
-  font-weight: 600;
-  transition: all 0.6s ease;
-  margin-left: 20px;
-  gap: 8px;
-
-}
-
-.cta::after {
-  content: " > ";
-  opacity: 1;
-  transform: translateX(1px);
-  transition: opacity 0.3s ease, transform 0.6s ease;
-}
-
-.btn-flecha:hover {
-  gap: 8px;
-}
-
-.cta:hover::after {
-  content: " > ";
-  opacity: 1;
-  transform: translateX(15px);
-}
-
-/* ---------- DROPDOWN ---------- */
-
-.menu ul li.dropdown {
-  position: relative;
-}
-
-.menu-toggle {
-  display: none;
-  /* Oculto en escritorio */
-  cursor: pointer;
-  font-size: 30px;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 20%;
-  transform: translateX(-20%);
-  background: #ffffff;
-  padding: 18px 20px;
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  min-width: 230px;
-  margin-top: 8px;
-}
-
-.menu ul li.dropdown:hover .dropdown-menu {
-  display: flex;
-}
-
-.dropdown-menu a {
-  color: #0d0d0d;
-  font-size: 14px;
-  text-decoration: none;
-  border-bottom: 1px dotted transparent;
-  transition: color 0.3s ease;
-}
-
-.dropdown-menu a::after {
-  display: none;
-}
-
-.dropdown-menu a:hover {
-  opacity: .5;
-  color: #667a99;
-}
-
-
-
-
-
-/* ---------- SECCIÓN PRINCPAL ---------- */
-.hero {
-  background-color: #E8FF00;
-  text-align: center;
-  padding: 60px 20px;
-  z-index: 100;
-}
-
-.hero-content {
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.hero h1 {
-  font-size: 3.5em;
-  color: #111;
-  margin-bottom: 24px;
-}
-
-.hero h2 {
-  font-size: 2.1rem;
-  font-weight: 600;
-  color: #111;
-  margin-bottom: 30px;
-}
-
-
-.hero p {
-  font-size: 1.4rem;
-  margin-bottom: 40px;
-  color: #333;
-}
-
-
-.btn {
-  background-color: #10172B;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 14px 39px;
-  border-radius: 35px;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  color: #EBFF00;
-}
-
-.btn::after {
-  content: " > ";
-  opacity: 0;
-  transform: translateX(1px);
-  transition: opacity 0.3s ease, transform 0.6s ease;
-}
-
-.btn:hover::after {
-  content: " > ";
-  opacity: 1;
-  transform: translateX(20px);
-}
-
-/* ---------- SECCIÓN IMAGEN SCROLL ---------- */
-.scroll-image {
-  position: fixed;
-  top: 55%;
-  right: 10%;
-  transform: translateY(-50%);
-  width: 260px;
-  height: auto;
-  transition: all 0.8s ease-in-out;
-  z-index: 99;
-}
-
-
-/* ---------- SECCIÓN INFORMATIVA ---------- */
-.info-section {
-  background-color: #10172B;
-  color: #fff;
-  padding: 100px 100px;
-}
-
-.info-container {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 50% 50%;
-
-  height: 100%;
-  width: 100%;
-  background-color: #10172B;
-
-}
-
-.info-text {
-  background-color: #ffffff;
-  padding: 100px;
-  flex: 1;
-  min-width: 320px;
-}
-
-.info-text h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-
-  color: #10172B;
-  margin-bottom: 25px;
-}
-
-.info-text ul {
-  list-style: disc;
-  margin-left: 20px;
-  line-height: 1.8;
-  font-size: 1.1rem;
-  color: #10172B;
-}
-
-.info-text li {
-  margin-bottom: 15px;
-}
-
-.info-text a {
-  color: #10172B;
-  text-decoration: underline;
-  font-weight: 500;
-}
-
-
-.app-links {
-  margin-top: 30px;
-  display: flex;
-  gap: 20px;
-}
-
-.app-links img {
-  height: 55px;
-  transition: transform 0.3s ease;
-}
-
-.app-links img:hover {
-  transform: scale(1.05);
-}
-
-.info-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  opacity: 1;
-}
-
-/* Borde del teléfono */
-.info-image img {
-  width: 220px;
-  /* ← un poco más grande */
-  height: auto;
-  position: relative;
-  z-index: 2;
-  display: block;
-}
-
-/* Video centrado dentro del borde */
-.info-image video {
-  width: 200px;
-  /* ← ajusta hasta que encaje en el borde */
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  border-radius: 30px;
-  /* ← ajusta hasta que las esquinas coincidan */
-}
-
-.section-background {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: -2;
-  background-color: #10172B;
-  /* ← cambia aquí el color de fondo */
-}
-
-.section-background-part {
-  position: absolute;
-  height: 100%;
-  width: 49%;
-  top: 0;
-  margin-left: 10px;
-  background-color: #ffffff;
-  /* ← cambia aquí el color de la parte derecha */
-}
-
-
-
-
-/* ---------- SECCIÓN LULO CUENTA ---------- */
-
-.lulo-cuenta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 100px;
-  margin-right: 550px;
-  height: 100%;
-  width: 100%;
-}
-
-
-.lulo-ahorro {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  align-items: center;
-  min-height: 90vh;
-  background: white;
-}
-
-.ahorro-texto {
-  padding: 60px 60px 60px 120px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.ahorro-texto h2 {
-  font-size: 42px;
-  font-weight: 700;
-  color: #0D1321;
-  line-height: 1.2;
-  margin-bottom: 25px;
-}
-
-.ahorro-texto ul {
-  margin-bottom: 35px;
-  font-size: 18px;
-  color: #0D1321;
-}
-
-.btns {
-  display: flex;
-  gap: 25px;
-}
-
-.btn-primary {
-  background: #EBFF00;
-  padding: 14px 28px;
-  border-radius: 30px;
-  color: #0D1321;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.2s ease;
-}
-
-.btn-primary:hover {
-  background-color: #000;
-  color: #EBFF00;
-}
-
-.btn-primary::after {
-  content: " > ";
-  opacity: 0;
-  transform: translateX(1px);
-  transition: opacity 0.3s ease, transform 0.6s ease;
-}
-
-.btn-primary:hover::after {
-  content: " > ";
-  opacity: 1;
-  transform: translateX(10px);
-}
-
-.btn-secondary {
-  color: #0D1321;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: 12px;
-}
-
-/* Imagen de ahorro abajo */
-.ahorro-imagen {
-  background: #1F2A44;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.ahorro-imagen img {
-  max-height: 450px;
-  object-fit: contain;
-}
-
-
-/*---------SECCIÓN LULO CREDITO---------*/
-.lulo-credito {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  min-height: 600px;
-  align-items: stretch;
-}
-
-
-.credito-imagen {
-  background: #FFF66F;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 0;
-  height: 100%;
-}
-
-.credito-imagen img {
-  max-height: 450px;
-  object-fit: contain;
-}
-
-
-.credito-texto {
-  background: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  max-width: 520px;
-  margin: 0 auto;
-
-  padding: 40px 60px;
-  gap: 20px;
-}
-
-.credito-texto h2 {
-  font-size: 42px;
-  color: #0D1321;
-  font-weight: 700;
-  margin-bottom: 30px;
-  line-height: 1.2;
-}
-
-.credito-texto ul {
-  font-size: 18px;
-  color: #0D1321;
-  line-height: 1.6;
-}
-
-
-
-/* ---------- SECCIÓN TARJETA ---------- */
-.lulo-tarjeta {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  background: #DFE2E7;
-  padding: 120px 0;
-  align-items: center;
-}
-
-
-.tarjeta-texto {
-  padding-left: 120px;
-  padding-right: 80px;
-}
-
-.tarjeta-texto h2 {
-  font-size: 42px;
-  color: #0D1321;
-  font-weight: 700;
-  margin-bottom: 30px;
-  line-height: 1.2;
-}
-
-.tarjeta-texto ul {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #0D1321;
-  margin-bottom: 40px;
-}
-
-
-.tarjeta-botones {
-  display: flex;
-  gap: 25px;
-}
-
-.btn-yellow {
-  display: inline-block;
-  margin-top: 40px;
-  background: #EBFF00;
-  color: #000;
-  padding: 14px 34px;
-  font-weight: 600;
-  border-radius: 40px;
-  text-decoration: none;
-  transition: .3s;
-  width: 200px;
-  height: 50px;
-}
-
-.btn-yellow:hover {
-  background-color: #000;
-  color: #EBFF00;
-}
-
-.btn-yellow::after {
-  content: " > ";
-  opacity: 0;
-  transform: translateX(0px);
-  transition: opacity 0.3s ease, transform 0.6s ease;
-}
-
-.btn-yellow:hover::after {
-  content: " > ";
-  opacity: 1;
-  transform: translateX(10px);
-}
-
-.btn-link {
-  font-weight: 600;
-  color: #0D1321;
-  text-decoration: none;
-  margin-top: 56px;
-}
-
-
-.tarjeta-imagen {
-  position: relative;
-  max-width: 520px;
-  z-index: 80;
-}
-
-.tarjeta-imagen img {
-  width: 90%;
-  height: auto;
-  border-radius: 20px;
-  margin-left: 100px;
-}
-
-/* ---------- SECCIÓN ECOSISTEMA ---------- */
-
-.ecosistema {
-  background: #111B2A;
-  color: white;
-  text-align: center;
-  padding: 120px 20px;
-}
-
-.ecosistema-content h2 {
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.ecosistema-content p {
-  font-size: 1.1rem;
-  margin-bottom: 40px;
-  opacity: .8;
-}
-
-.phones {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-  margin: 60px 0;
-}
-
-.phone {
-  width: 260px;
-  filter: drop-shadow(0px 5px 25px rgba(28, 35, 51, 0.6));
-}
-
-.phone-left {
-  width: 400px;
-  height: 300px;
-}
-
-
-
-.ecosistema-subtext {
-  max-width: 700px;
-  margin: auto;
-  opacity: .8;
-}
-
-
-
-.btn-yellow:hover {
-  background: #000000;
-  color: #EBFF00;
-}
-
-.item-deco {
-  margin-top: 88px;
-  display: grid;
-  justify-items: center;
-}
-
-.home-legals {
-  margin: 32px 0;
-  padding: 0 5%;
-  font-size: .99rem;
-  text-align: center;
-  color: #667a99;
-  line-height: 20px;
-}
-
-/* ---------- FOOTER ---------- */
-.footer {
-  background: #121622;
-  color: #C9D1D9;
-  padding: 80px 10%;
-  font-size: 15px;
-}
-
-.footer a {
-  color: #ffffff;
-  text-decoration: none;
-  font-style: bold;
-  font-size: 17px;
-  transition: .3s;
-}
-
-.footer a:hover {
-  color: #667a99;
-}
-
-.footer-top {
-  display: grid;
-  grid-template-columns: 1.2fr 1.2fr 1fr 1fr 2fr;
-  gap: 60px;
-  margin-bottom: 50px;
-}
-
-.footer-logo {
-  width: 120px;
-  text-align: center;
-}
-
-.footer-col h4 {
-  margin-bottom: 40px;
-  font-size: 19px;
-  font-weight: 600;
-  color: #667a99;
-
-}
-
-.footer-col ul li {
-  margin: 20px 0;
-
-}
-
-.footer-social {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  margin-top: 20px;
-  align-items: center;
-}
-
-
-.icon {
-  position: relative;
-  overflow: hidden;
-
-  background: #162237;
-  padding: 28px 32px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  cursor: pointer;
-}
-
-/* capa amarilla que sube */
-.icon::before {
-  content: "";
-  position: absolute;
-
-  left: 0;
-  bottom: -100%;
-
-  width: 100%;
-  height: 100%;
-
-  background: #EBFF00;
-
-  transition: bottom 0.35s ease-in-out;
-
-  z-index: 0;
-}
-
-/* hace que el amarillo suba */
-.icon:hover::before {
-  bottom: 0;
-}
-
-.icon img {
-  width: 25px;
-  height: 25px;
-
-  position: relative;
-  z-index: 1;
-}
-
-.footer-apps {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  margin-top: 30px;
-}
-
-.footer-col ul {
-  list-style: none;
-  /* ← esto quita los puntos */
-  padding: 0;
-  margin: 0;
-}
-
-.footer-apps img {
-  width: 115px;
-  height: auto;
-}
-
-.footer-social {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 60px;
-}
-
-.legal-text {
-  max-width: 850px;
-  margin: auto;
-  opacity: .7;
-  line-height: 1.6;
-  font-size: 13px;
-}
-
-.footer-certificaciones {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 40px 0;
-}
-
-.footer-certificaciones img {
-  height: 45px;
-  opacity: .85;
-}
-
-.copy {
-  font-size: 14px;
-  opacity: .7;
-}
-
-hr {
-  border: none;
-  border-top: 1px solid #2C3140;
-  margin: 40px 0;
-}
-
-.footer-terms {
-  background-color: #121622;
-  display: grid;
-  padding: 60px 1px;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 300px;
-  color: #C9D1D9;
-  grid-template-columns: 500px 500fr;
-}
-
-.footer-terms h3 {
-  font-size: 20px;
-  margin-bottom: 40px;
-  color: #667a99;
-}
-
-.footer-terms p {
-  line-height: 1.8;
-  font-size: 13px;
-  opacity: 0.8;
-}
-
-.terms-left {
-  text-align: left;
-  max-width: 100%;
-  color: #667a99;
-}
-
-.terms-right {
-  text-align: right;
-  max-width: 70%;
-  font-size: 40px;
-}
-
-.rights {
-  font-size: 100px;
-  margin-bottom: 45px;
-  color: #667a99;
-
-}
-
-.cert-group {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 40px;
-}
-
-.cert-text {
-  text-align: center;
-  margin-top: 6px;
-  font-size: 13px;
-  opacity: .7;
-}
-
-.cert img,
-.fogafin {
-  height: 70px;
-}
-
-
-
-
-/* ===== DESKTOP ===== */
-.lulo-ahorro .ahorro-imagen video {
-  display: none;
-}
-
-.lulo-ahorro .ahorro-imagen img {
-  display: block;
-}
-
-.lulo-credito .credito-imagen video {
-  display: none !important;
-}
-
-
-/* ---------- MEDIA QUERIES ---------- */
-@media (max-width: 1024px) {
-
-  /*HOLA GABII AQUÍ ESTOY HACIENDO LA VERSION MOBILE :)) JUNGKOOK T AMA*/
-  /*GABI SI VES ESTO ES PARA DARTE LA  MALA NOTICIA DE QUE 
-  LES CANTARON OUTRO:WINGS Y ON A LAS GRINGAS DE EL PASO TIPO WTF
-  SI ERA TU CANCION Y MI CANCION EN PLAN ME MWORD Y TODO VA A SER CULPA
-  DE BETEESE NOOO BTS NO DEBISTE HABER HECHO ESO AHORA TENDRÉ QUE
-  TIRARME DEL BALCÓN BORAHAE SHIBAL*/
-
-
-
-
-  /*---CONTAINER DE INFO---*/
-  .info-container {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  /* Convertimos el bloque de texto en columna */
-  .info-text {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Reservamos espacio para el video */
-  .info-text ul {
-    margin-bottom: 500px;
-    /* AJUSTABLE */
-  }
-
-  .info-text a {
-    color: #ffffff !important;
-    text-decoration: underline !important;
-  }
-
-  /* VIDEO (sube visualmente al espacio reservado) */
-  .info-image {
-    display: flex;
-    justify-content: center;
-    margin-top: -590px;
-    /* AJUSTABLE */
-    margin-bottom: 120px;
-  }
-
-  /* Tamaños del mockup */
-  .info-image img {
-    width: 200px;
-  }
-
-  .info-image video {
-    width: 180px;
-  }
-
-  /* BOTONES (quedan debajo del video) */
-  .app-links {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: -30px;
-    margin-bottom: 50px;
-  }
-
-
-  /*-----------------------------------------------------------------------*/
-  /* --- LULO AHORRO MOBILE --- */
-  /* CONTENEDOR */
-  .lulo-ahorro {
-    display: flex;
-    flex-direction: column;
-    background: #EDEFF2;
-    margin-top: 0px;
-  }
-
-  /* 🔵 BLOQUE SUPERIOR (GRIS) */
-  .lulo-ahorro .ahorro-imagen {
-    order: 2;
-    padding: 20px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent !important;
-  }
-
-  /* TAMBIÉN METEMOS EL TÍTULO EN EL GRIS */
-  .ahorro-texto h2 {
-    order: 1;
-    text-align: left !important;
-    padding: 30px 30px 0 30px;
-    margin: 20px 15px;
-  }
-
-  /* VIDEO */
-  .lulo-ahorro .ahorro-imagen video {
-    display: block;
-    width: 90% !important;
-    max-width: 420px !important;
-    height: auto !important;
-    max-height: none !important;
-    border-radius: 25px 25px 0 0;
-    background: transparent;
-    object-fit: cover;
-    margin-top: -20px;
-    margin-bottom: -11px !important;
-  }
-
-
-  /* ⚪ BLOQUE INFERIOR (BLANCO)*/
-  /*.ahorro-texto ul {
-    order: 3;
-    background: #ffffff;
-    margin: 0 !important;
-    padding-left: 100px;
-    padding-right: 70px;
-    padding-top: 50px;
-    padding-bottom: 40px;
-    margin-top: -10px !important;
-    width: calc(100% + 40px) !important;
-    margin-left: -20px !important;
-    box-sizing: border-box;
-  }*/
-
-  .ahorro-texto ul {
-    order: 3;
-    background: #ffffff;
-
-    margin: 0 !important;
-
-    padding: 40px 30px !important;
-
-    margin-top: -10px !important;
-
-    width: 100% !important;
-
-    margin-left: 0 !important;
-
+  /* Reset básico */
+  * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
 
-
-
-  .ahorro-texto ul li {
-    margin-bottom: 15px;
-    /* ajusta el valor a tu gusto */
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/gilroy-regular-webfont.woff2') format('woff2');
+    font-weight: 400;
   }
 
-  /* BOTONES */
-  /*.btns {
-    order: 4;
-    background: #ffffff;
-    padding-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-top: auto;
-    width: calc(100% + 40px) !important;
-    margin-left: -20px !important;
-    box-sizing: border-box;
-  }*/
-
-
-  .btns {
-    order: 4;
-    background: #ffffff;
-
-    padding-bottom: 30px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 15px;
-
-    margin-top: auto;
-
-    width: 100% !important;
-
-    margin-left: 0 !important;
-
-    box-sizing: border-box;
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/gilroy-medium-webfont.woff2') format('woff2');
+    font-weight: 500;
   }
 
-  /* IMPORTANTE */
-  .ahorro-texto {
-    display: contents;
-  }
-
-  /* OCULTAR IMAGEN */
-  .lulo-ahorro .ahorro-imagen img {
-    display: none;
-  }
-
-
-  /*-----------------------------------------------------------------------*/
-  /* --- LULO CRÉDITO --- */
-  /* CONTENEDOR */
-  .lulo-credito {
-    display: flex;
-    flex-direction: column;
-    background: #EDEFF2;
-    margin-top: 20px;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  /* 🔵 BLOQUE SUPERIOR (GRIS) */
-  .lulo-credito .credito-imagen {
-    order: 2;
-    padding: 20px 20px 0 20px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    background: transparent !important;
-  }
-
-  /* TÍTULO EN EL GRIS */
-  .credito-texto h2 {
-    order: 1;
-    text-align: left !important;
-    padding: 30px 30px 0 30px;
-    margin: 20px 15px;
-  }
-
-  /* VIDEO */
-  .lulo-credito .credito-imagen video {
-    display: block !important;
-    width: 90% !important;
-    max-width: 420px !important;
-    height: auto !important;
-    border-radius: 25px 25px 0 0;
-    object-fit: cover;
-    margin-top: -20px;
-    margin-bottom: -11px !important;
-  }
-
-  /* OCULTAR IMAGEN */
-  .lulo-credito .credito-imagen img {
-    display: none;
-  }
-
-  /* ⚪ BLOQUE INFERIOR (BLANCO) */
-  .credito-texto ul {
-    order: 3;
-    background: #ffffff;
-    margin: 0 !important;
-    padding-left: 100px;
-    padding-right: 70px;
-    padding-top: 50px;
-    padding-bottom: 1px;
-    margin-top: -10px !important;
-    width: calc(100% + 40px) !important;
-    margin-left: -20px !important;
-    box-sizing: border-box;
-  }
-
-  .credito-texto ul li {
-    margin-bottom: 15px;
-  }
-
-  /* BOTONES */
-  .tarjeta-botones {
-    order: 4;
-    background: #ffffff;
-    padding-top: 1px;
-    padding-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-top: 0 !important;
-    width: calc(100% + 40px) !important;
-    margin-left: -20px !important;
-    box-sizing: border-box;
-  }
-
-  /* IMPORTANTE */
-  .credito-texto {
-    display: contents;
-  }
-
-
-  /*-----------------------------------------------------------------------*/
-  /* --- LULO TARJETA MOBILE --- */
-  .lulo-tarjeta {
-    display: flex;
-    flex-direction: column;
-    background: #EDEFF2;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  /* IMAGEN ARRIBA */
-  .lulo-tarjeta .tarjeta-imagen {
-    order: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 25px 0 25px;
-  }
-
-  .lulo-tarjeta .tarjeta-imagen img {
-    width: 90% !important;
-    max-width: 420px !important;
-    height: auto !important;
-    margin-left: 0 !important;
-    border-radius: 0 !important;
-  }
-
-  /* TÍTULO */
-  .tarjeta-texto h2 {
-    order: 2;
-    text-align: left !important;
-    font-size: 1.9rem !important;
-    margin: 20px 0 !important;
-    padding: 0 25px !important;
-  }
-
-  /* LISTA */
-  .tarjeta-texto ul {
-    order: 3;
-    font-size: 1rem !important;
-    line-height: 1.6 !important;
-    padding: 0 25px 0 45px !important;
-    margin: 0 !important;
-  }
-
-  .tarjeta-texto ul li {
-    margin-bottom: 15px;
-  }
-
-  /* BOTONES */
-  .tarjeta-texto .tarjeta-botones {
-    order: 4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-top: 20px !important;
-    padding: 0 25px 30px 25px !important;
-    background: transparent !important;
-  }
-
-  /* IMPORTANTE */
-  .tarjeta-texto {
-    display: contents;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-  /* 1. HEADER (Menu Hamburguesa) */
-  .navbar {
-    padding: 15px 20px;
-    align-items: center;
-  }
-
+  /* Fuentes y colores principales */
   body {
-    overflow-x: hidden;
-    position: relative;
+    font-family: 'Gilroy', sans-serif;
+    background-color: #fefefe;
+    color: #111;
   }
 
-  /*HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
-
-  body.menu-open {
-    overflow: hidden;
+  /* ---------- HEADER ---------- */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 0px 0px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transform: scale(0px);
+    transition: all 0.5s ease-in-out;
   }
 
-  .app {
-    position: relative;
-    padding-bottom: 0;
-    padding-top: 0;
+  .navbar.shrink {
+    padding: -10px 60px;
   }
-
 
   .logo img {
-    height: 40px;
-    margin-left: 0px;
-    margin-top: 10px;
+    height: 60px;
+    margin-left: 50px;
   }
 
-  .cta {
-    display: flex;
-    padding: 10px 20px;
-  }
-
-  /* Estilos del ícono de hamburguesa (mostrar) */
-  .menu-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 101;
-  }
-
-  /* Configuración del Menú Desplegable */
   .menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #f5f5f5;
-    padding: 20px 25px 40px;
-    transform: translateX(-100%);
-    transition: transform .4s ease;
-    z-index: 100;
-    overflow-y: auto;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Clase que se activa con JavaScript */
-  .menu.active {
-    transform: translateX(0);
-  }
-
-
-  .close-menu {
-    align-self: flex-end;
-    font-size: 2rem;
-    cursor: pointer;
-    margin-bottom: 20px;
-    color: #0D1321;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px;
   }
 
   .menu ul {
-    width: 100%;
+    list-style: none;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 0;
+    gap: 50px;
     margin: 0;
+    padding: 0;
+  }
+
+  .menu ul li a {
+    position: relative;
+    display: inline-block;
+    /**/
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-family: 'Gilroy', sans-serif;
+    transition: color 0.3s ease;
+    z-index: 1;
+    /**/
+  }
+
+
+  .menu ul li a button {
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-family: 'Gilroy', sans-serif;
+    transition: color 0.3s ease;
   }
 
   .menu ul li a::after {
-    display: none;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -17px;
+    height: 25px;
+    background: #EBFF00;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
   }
 
-  /* DROPDOWN (Estilo de Acordeón simple) */
-  .dropdown-btn {
-    font-weight: 600 !important;
+  .menu ul li a:hover::after {
+    transform: scaleX(0.55);
   }
 
-  /* ITEMS PRINCIPALES */
-  .menu ul li {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-
-  /* TEXTO PRINCIPAL */
-  .menu ul li>a {
-    display: block !important; 
-    width: 100% !important;
-    text-align: center !important;
-    font-size: 1.55rem;
-    font-weight: 700;
-    color: #111827;
+  .cta {
+    display: inline-flex;
+    background-color: #10172B;
+    color: #fff;
     text-decoration: none;
-    padding: 0;
+    padding: 40px 60px;
+    font-weight: 600;
+    transition: all 0.6s ease;
+    margin-left: 20px;
+    gap: 8px;
 
   }
 
-  /* DROPDOWN */
+  .cta::after {
+    content: " > ";
+    opacity: 1;
+    transform: translateX(1px);
+    transition: opacity 0.3s ease, transform 0.6s ease;
+  }
+
+  .btn-flecha:hover {
+    gap: 8px;
+  }
+
+  .cta:hover::after {
+    content: " > ";
+    opacity: 1;
+    transform: translateX(15px);
+  }
+
+  /* ---------- DROPDOWN ---------- */
+
+  .menu ul li.dropdown {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: none;
+    /* Oculto en escritorio */
+    cursor: pointer;
+    font-size: 30px;
+  }
+
   .dropdown-menu {
-    position: static !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    width: 100% !important;
-    margin-top: 18px !important;
-    margin-bottom: 10px !important;
-    padding: 0 !important;
-    background: transparent !important;
-    transform: none !important;
-    gap: 0 !important;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 20%;
+    transform: translateX(-20%);
+    background: #ffffff;
+    padding: 18px 20px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 230px;
+    margin-top: 8px;
   }
 
-  .dropdown-menu li {
-    width: 100% !important;
-    text-align: center !important;
-    margin-bottom: 0 !important;
+  .menu ul li.dropdown:hover .dropdown-menu {
+    display: flex;
   }
 
-  /* LINKS INTERNOS */
-  .dropdown-menu>a {
-    display: block !important;
-    width: 100% !important;
-    text-align: center !important;
-    font-size: 1rem !important;
-    font-weight: bold!important;
-    padding: 10px 0 !important;
-    color: black !important;
-    border-top: 1px solid #e5e5e5 !important;
-    margin: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-
-  /* última línea */
-  .dropdown-menu>a:last-child {
-    border: none !important;
-  }
-
-
-  .dropdown-menu.open {
-    display: flex !important;
+  .dropdown-menu a {
+    color: #0d0d0d;
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 1px dotted transparent;
+    transition: color 0.3s ease;
   }
 
   .dropdown-menu a::after {
-    display: none !important;
-  }
-
-  .section-background {
     display: none;
   }
 
+  .dropdown-menu a:hover {
+    opacity: .5;
+    color: #667a99;
+  }
+
+
+
+
+
+  /* ---------- SECCIÓN PRINCPAL ---------- */
   .hero {
-    padding: 40px 20px;
+    background-color: #E8FF00;
+    text-align: center;
+    padding: 60px 20px;
+    z-index: 100;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    margin: 0 auto;
   }
 
   .hero h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 3.5em;
+    color: #111;
+    margin-bottom: 24px;
   }
 
-  .hero p {
-    font-size: 1.1rem;
+  .hero h2 {
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: #111;
     margin-bottom: 30px;
   }
 
-  .info-container {
-    grid-template-columns: 1fr;
-    background-color: transparent !important;
+
+  .hero p {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    color: #333;
   }
 
-  .lulo-ahorro,
-  .lulo-credito,
-  .lulo-tarjeta {
-    grid-template-columns: 1fr;
+
+  .btn {
+    background-color: #10172B;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 39px;
+    border-radius: 35px;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+
+  .btn:hover {
+    transform: scale(1.05);
+    color: #EBFF00;
+  }
+
+  .btn::after {
+    content: " > ";
+    opacity: 0;
+    transform: translateX(1px);
+    transition: opacity 0.3s ease, transform 0.6s ease;
+  }
+
+  .btn:hover::after {
+    content: " > ";
+    opacity: 1;
+    transform: translateX(20px);
+  }
+
+  /* ---------- SECCIÓN IMAGEN SCROLL ---------- */
+  .scroll-image {
+    position: fixed;
+    top: 55%;
+    right: 10%;
+    transform: translateY(-50%);
+    width: 260px;
+    height: auto;
+    transition: all 0.8s ease-in-out;
+    z-index: 99;
+  }
+
+
+  /* ---------- SECCIÓN INFORMATIVA ---------- */
+  .info-section {
+    background-color: #10172B;
+    color: #fff;
+    padding: 100px 100px;
+  }
+
+  .info-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+
+    height: 100%;
+    width: 100%;
+    background-color: #10172B;
+
   }
 
   .info-text {
-    background-color: #1B2033;
-    padding: 50px;
+    background-color: #ffffff;
+    padding: 100px;
+    flex: 1;
+    min-width: 320px;
   }
 
   .info-text h2 {
-    margin-top: 30px;
-    color: #DFE2E7;
-    font-size: 23px;
-    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    color: #10172B;
+    margin-bottom: 25px;
   }
 
   .info-text ul {
-    color: #DFE2E7;
-    font-size: 14px;
+    list-style: disc;
+    margin-left: 20px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #10172B;
   }
 
-  .ahorro-texto {
-    padding: 30px 50px;
-    background-color: #DFE2E7;
+  .info-text li {
+    margin-bottom: 15px;
   }
 
-  .ahorro-texto h2 {
-    margin-top: 30px;
-    color: #1B2033;
-    font-size: 20px;
-    text-align: left;
+  .info-text a {
+    color: #10172B;
+    text-decoration: underline;
+    font-weight: 500;
   }
 
-  .credito-texto {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  .tarjeta-texto {
-    padding: 60px 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-
-  .ahorro-texto h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-
-  .ahorro-texto ul {
-    font-size: 16px;
-    margin-bottom: 20px;
-    margin-right: 30px;
-    margin-left: 30px;
-  }
-
-  .btns {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .btn-primary {
-    width: 70%;
-    text-align: center;
-    height: 50px;
-  }
-
-  .credito-texto h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-
-  .credito-texto ul {
-    font-size: 16px;
-    margin-bottom: 20px;
-    margin-right: 30px;
-    margin-left: 30px;
-  }
-
-  .tarjeta-texto h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-  }
 
   .app-links {
-    flex-direction: row;
-    gap: 5px;
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
   }
 
   .app-links img {
+    height: 55px;
+    transition: transform 0.3s ease;
+  }
+
+  .app-links img:hover {
+    transform: scale(1.05);
+  }
+
+  .info-image {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    height: 45px;
+    position: relative;
+    opacity: 1;
+  }
+
+  /* Borde del teléfono */
+  .info-image img {
+    width: 220px;
+    /* ← un poco más grande */
+    height: auto;
+    position: relative;
+    z-index: 2;
+    display: block;
+  }
+
+  /* Video centrado dentro del borde */
+  .info-image video {
+    width: 200px;
+    /* ← ajusta hasta que encaje en el borde */
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: 30px;
+    /* ← ajusta hasta que las esquinas coincidan */
+  }
+
+  .section-background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    background-color: #10172B;
+    /* ← cambia aquí el color de fondo */
+  }
+
+  .section-background-part {
+    position: absolute;
+    height: 100%;
+    width: 49%;
+    top: 0;
+    margin-left: 10px;
+    background-color: #ffffff;
+    /* ← cambia aquí el color de la parte derecha */
   }
 
 
-  .ahorro-imagen,
-  .credito-imagen {
-    display: none;
-  }
 
-  .tarjeta-imagen {
-    order: 1;
-    min-height: 50vh;
-  }
 
-  .lulo-ahorro .ahorro-texto {
-    order: 1;
-    padding-top: 0;
-  }
+  /* ---------- SECCIÓN LULO CUENTA ---------- */
 
-  .lulo-ahorro .ahorro-imagen {
-    order: 2;
-    min-height: 40vh;
-  }
-
-  .ahorro-imagen video,
-  .ahorro-imagen img {
-    max-height: 300px;
-    width: auto;
+  .lulo-cuenta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+    margin-right: 550px;
+    height: 100%;
+    width: 100%;
   }
 
 
   .lulo-ahorro {
-    grid-template-columns: 1fr;
-    min-height: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    min-height: 90vh;
+    background: white;
   }
 
+  .ahorro-texto {
+    padding: 60px 60px 60px 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ahorro-texto h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #0D1321;
+    line-height: 1.2;
+    margin-bottom: 25px;
+  }
+
+  .ahorro-texto ul {
+    margin-bottom: 35px;
+    font-size: 18px;
+    color: #0D1321;
+  }
+
+  .btns {
+    display: flex;
+    gap: 25px;
+  }
+
+  .btn-primary {
+    background: #EBFF00;
+    padding: 14px 28px;
+    border-radius: 30px;
+    color: #0D1321;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #000;
+    color: #EBFF00;
+  }
+
+  .btn-primary::after {
+    content: " > ";
+    opacity: 0;
+    transform: translateX(1px);
+    transition: opacity 0.3s ease, transform 0.6s ease;
+  }
+
+  .btn-primary:hover::after {
+    content: " > ";
+    opacity: 1;
+    transform: translateX(10px);
+  }
+
+  .btn-secondary {
+    color: #0D1321;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 12px;
+  }
+
+  /* Imagen de ahorro abajo */
   .ahorro-imagen {
     background: #1F2A44;
-    min-height: 40vh;
-    padding: 20px 0;
-  }
-
-  /* 2. TARJETA LULO */
-  .lulo-tarjeta {
-    grid-template-columns: 1fr;
-    background: #DFE2E7;
-    padding: 60px 0;
-    align-items: center;
-  }
-
-  .tarjeta-imagen {
-    order: 1;
-    max-width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
   }
 
-  .tarjeta-imagen img {
-    margin-left: 0;
-    width: 100%;
-    max-width: 350px;
+  .ahorro-imagen img {
+    max-height: 450px;
+    object-fit: contain;
   }
+
+
+  /*---------SECCIÓN LULO CREDITO---------*/
+  .lulo-credito {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    min-height: 600px;
+    align-items: stretch;
+  }
+
+
+  .credito-imagen {
+    background: #FFF66F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    height: 100%;
+  }
+
+  .credito-imagen img {
+    max-height: 450px;
+    object-fit: contain;
+  }
+
+
+  .credito-texto {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 520px;
+    margin: 0 auto;
+
+    padding: 40px 60px;
+    gap: 20px;
+  }
+
+  .credito-texto h2 {
+    font-size: 42px;
+    color: #0D1321;
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.2;
+  }
+
+  .credito-texto ul {
+    font-size: 18px;
+    color: #0D1321;
+    line-height: 1.6;
+  }
+
+
+
+  /* ---------- SECCIÓN TARJETA ---------- */
+  .lulo-tarjeta {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background: #DFE2E7;
+    padding: 120px 0;
+    align-items: center;
+  }
+
 
   .tarjeta-texto {
-    order: 2;
-    padding: 0 40px;
+    padding-left: 120px;
+    padding-right: 80px;
   }
 
   .tarjeta-texto h2 {
-    font-size: 1.9rem;
-    text-align: left;
+    font-size: 42px;
+    color: #0D1321;
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.2;
   }
 
   .tarjeta-texto ul {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 20px 0;
-    padding: 0 15px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #0D1321;
+    margin-bottom: 40px;
   }
+
 
   .tarjeta-botones {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    display: flex;
+    gap: 25px;
   }
 
   .btn-yellow {
-    width: 100%;
-    max-width: 250px;
-    text-align: center;
-  }
-
-  .btn-link {
-    margin-top: 10px;
-  }
-
-  /* 3. ECOSISTEMA */
-  .ecosistema {
-    padding: 80px 20px;
-  }
-
-  .ecosistema-content h2 {
-    font-size: 25px;
-  }
-
-  .ecosistema-content p {
-    font-size: 15px;
-  }
-
-  .ecosistema-subtext {
-    font-size: 14px;
-    margin-top: 0px;
-  }
-
-  .phones {
-    gap: 30px;
-    margin: 40px 0;
-  }
-
-  .phone-left {
-    width: 100%;
-    height: auto;
-    max-width: 300px;
-  }
-
-  .btn-yellow {
-    width: 70%;
-    text-align: center;
+    display: inline-block;
+    margin-top: 40px;
+    background: #EBFF00;
+    color: #000;
+    padding: 14px 34px;
+    font-weight: 600;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: .3s;
+    width: 200px;
     height: 50px;
   }
 
-  /* 4. FOOTER */
+  .btn-yellow:hover {
+    background-color: #000;
+    color: #EBFF00;
+  }
+
+  .btn-yellow::after {
+    content: " > ";
+    opacity: 0;
+    transform: translateX(0px);
+    transition: opacity 0.3s ease, transform 0.6s ease;
+  }
+
+  .btn-yellow:hover::after {
+    content: " > ";
+    opacity: 1;
+    transform: translateX(10px);
+  }
+
+  .btn-link {
+    font-weight: 600;
+    color: #0D1321;
+    text-decoration: none;
+    margin-top: 56px;
+  }
+
+
+  .tarjeta-imagen {
+    position: relative;
+    max-width: 520px;
+    z-index: 80;
+  }
+
+  .tarjeta-imagen img {
+    width: 90%;
+    height: auto;
+    border-radius: 20px;
+    margin-left: 100px;
+  }
+
+  /* ---------- SECCIÓN ECOSISTEMA ---------- */
+
+  .ecosistema {
+    background: #111B2A;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+  }
+
+  .ecosistema-content h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .ecosistema-content p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    opacity: .8;
+  }
+
+  .phones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin: 60px 0;
+  }
+
+  .phone {
+    width: 260px;
+    filter: drop-shadow(0px 5px 25px rgba(28, 35, 51, 0.6));
+  }
+
+  .phone-left {
+    width: 400px;
+    height: 300px;
+  }
+
+
+
+  .ecosistema-subtext {
+    max-width: 700px;
+    margin: auto;
+    opacity: .8;
+  }
+
+
+
+  .btn-yellow:hover {
+    background: #000000;
+    color: #EBFF00;
+  }
+
+  .item-deco {
+    margin-top: 88px;
+    display: grid;
+    justify-items: center;
+  }
+
+  .home-legals {
+    margin: 32px 0;
+    padding: 0 5%;
+    font-size: .99rem;
+    text-align: center;
+    color: #667a99;
+    line-height: 20px;
+  }
+
+  /* ---------- FOOTER ---------- */
   .footer {
-    padding: 40px 20px;
+    background: #121622;
+    color: #C9D1D9;
+    padding: 80px 10%;
+    font-size: 15px;
+  }
+
+  .footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-style: bold;
+    font-size: 17px;
+    transition: .3s;
+  }
+
+  .footer a:hover {
+    color: #667a99;
   }
 
   .footer-top {
-    align-content: center;
-    grid-template-columns: 1fr;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: 1.2fr 1.2fr 1fr 1fr 2fr;
+    gap: 60px;
+    margin-bottom: 50px;
+  }
+
+  .footer-logo {
+    width: 120px;
     text-align: center;
   }
 
   .footer-col h4 {
-    margin-bottom: 15px;
+    margin-bottom: 40px;
+    font-size: 19px;
+    font-weight: 600;
+    color: #667a99;
+
   }
 
   .footer-col ul li {
+    margin: 20px 0;
 
-    margin: 10px 0;
   }
 
-  .footer-col li a {
-    display: grid;
+  .footer-social {
+    display: flex;
     flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
   }
-
 
 
   .icon {
+    position: relative;
+    overflow: hidden;
+
+    background: #162237;
+    padding: 28px 32px;
+    display: inline-flex;
     align-items: center;
-    padding: 10px 15px;
-    font-size: 14px;
-    width: 90px;
-    height: 90px;
-    text-align: center;
+    justify-content: center;
+
+    cursor: pointer;
+  }
+
+  /* capa amarilla que sube */
+  .icon::before {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: #EBFF00;
+
+    transition: bottom 0.35s ease-in-out;
+
+    z-index: 0;
+  }
+
+  /* hace que el amarillo suba */
+  .icon:hover::before {
+    bottom: 0;
+  }
+
+  .icon img {
+    width: 25px;
+    height: 25px;
+
+    position: relative;
+    z-index: 1;
   }
 
   .footer-apps {
-    margin-top: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 30px;
+    gap: 10px;
+    margin-top: 30px;
+  }
 
+  .footer-col ul {
+    list-style: none;
+    /* ← esto quita los puntos */
+    padding: 0;
+    margin: 0;
   }
 
   .footer-apps img {
-    width: 130px;
-    margin-top: 0;
-    border: 1px solid #ffffff;
-    /* ← borde blanco */
-    border-radius: 8px;
+    width: 115px;
+    height: auto;
   }
 
-  /* Términos y Condiciones */
-  .footer-terms {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px 0;
+  .footer-social {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
 
+  .footer-bottom {
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  .legal-text {
+    max-width: 850px;
+    margin: auto;
+    opacity: .7;
+    line-height: 1.6;
+    font-size: 13px;
+  }
+
+  .footer-certificaciones {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+  }
+
+  .footer-certificaciones img {
+    height: 45px;
+    opacity: .85;
+  }
+
+  .copy {
+    font-size: 14px;
+    opacity: .7;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #2C3140;
+    margin: 40px 0;
+  }
+
+  .footer-terms {
+    background-color: #121622;
+    display: grid;
+    padding: 60px 1px;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 300px;
+    color: #C9D1D9;
+    grid-template-columns: 500px 500fr;
+  }
+
+  .footer-terms h3 {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #667a99;
+  }
+
+  .footer-terms p {
+    line-height: 1.8;
+    font-size: 13px;
+    opacity: 0.8;
   }
 
   .terms-left {
-    text-align: center;
+    text-align: left;
     max-width: 100%;
-
-  }
-
-  .terms-left h3 {
-    text-align: center;
-    margin-bottom: 20px;
+    color: #667a99;
   }
 
   .terms-right {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-size: initial;
-    max-width: 100%;
-  }
-
-
-  .terms-right .rights {
-    order: 2;
-    margin-top: 20px;
-  }
-
-  .terms-right .cert-group {
-    order: 1;
-    margin-bottom: 20px;
+    text-align: right;
+    max-width: 70%;
+    font-size: 40px;
   }
 
   .rights {
-    font-size: 14px;
-    margin-bottom: 20px;
+    font-size: 100px;
+    margin-bottom: 45px;
+    color: #667a99;
+
   }
 
   .cert-group {
     display: flex;
-    align-content: center;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 15px;
+    justify-content: flex-end;
+    gap: 40px;
+  }
+
+  .cert-text {
+    text-align: center;
+    margin-top: 6px;
+    font-size: 13px;
+    opacity: .7;
   }
 
   .cert img,
   .fogafin {
-    height: 50px;
+    height: 70px;
   }
 
-  .lulo-ahorro,
-  .lulo-credito,
-  .lulo-tarjeta {
-    overflow-x: hidden;
+
+
+
+  /* ===== DESKTOP ===== */
+  .lulo-ahorro .ahorro-imagen video {
+    display: none;
   }
-}
+
+  .lulo-ahorro .ahorro-imagen img {
+    display: block;
+  }
+
+  .lulo-credito .credito-imagen video {
+    display: none !important;
+  }
+
+
+  /* ---------- MEDIA QUERIES ---------- */
+  @media (max-width: 1024px) {
+
+    /*HOLA GABII AQUÍ ESTOY HACIENDO LA VERSION MOBILE :)) JUNGKOOK T AMA*/
+    /*GABI SI VES ESTO ES PARA DARTE LA  MALA NOTICIA DE QUE 
+    LES CANTARON OUTRO:WINGS Y ON A LAS GRINGAS DE EL PASO TIPO WTF
+    SI ERA TU CANCION Y MI CANCION EN PLAN ME MWORD Y TODO VA A SER CULPA
+    DE BETEESE NOOO BTS NO DEBISTE HABER HECHO ESO AHORA TENDRÉ QUE
+    TIRARME DEL BALCÓN BORAHAE SHIBAL*/
+
+
+    /*---CONTAINER DE INFO---*/
+    .info-container {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Convertimos el bloque de texto en columna */
+    .info-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Reservamos espacio para el video */
+    .info-text ul {
+      margin-bottom: 500px;
+      /* AJUSTABLE */
+    }
+
+    .info-text a {
+      color: #ffffff !important;
+      text-decoration: underline !important;
+    }
+
+    /* VIDEO (sube visualmente al espacio reservado) */
+    .info-image {
+      display: flex;
+      justify-content: center;
+      margin-top: -590px;
+      /* AJUSTABLE */
+      margin-bottom: 120px;
+    }
+
+    /* Tamaños del mockup */
+    .info-image img {
+      width: 200px;
+    }
+
+    .info-image video {
+      width: 180px;
+    }
+
+    /* BOTONES (quedan debajo del video) */
+    .app-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: -30px;
+      margin-bottom: 50px;
+    }
+
+
+    /*-----------------------------------------------------------------------*/
+    /* --- LULO AHORRO MOBILE --- */
+    /* CONTENEDOR */
+    .lulo-ahorro {
+      display: flex;
+      flex-direction: column;
+      background: #EDEFF2;
+      margin-top: 0px;
+    }
+
+    /* 🔵 BLOQUE SUPERIOR (GRIS) */
+    .lulo-ahorro .ahorro-imagen {
+      order: 2;
+      padding: 20px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent !important;
+    }
+
+    /* TAMBIÉN METEMOS EL TÍTULO EN EL GRIS */
+    .ahorro-texto h2 {
+      order: 1;
+      text-align: left !important;
+      padding: 30px 30px 0 30px;
+      margin: 20px 15px;
+    }
+
+    /* VIDEO */
+    .lulo-ahorro .ahorro-imagen video {
+      display: block;
+      width: 90% !important;
+      max-width: 420px !important;
+      height: auto !important;
+      max-height: none !important;
+      border-radius: 25px 25px 0 0;
+      background: transparent;
+      object-fit: cover;
+      margin-top: -20px;
+      margin-bottom: -11px !important;
+    }
+
+    /* ⚪ BLOQUE INFERIOR (BLANCO)*/
+    .ahorro-texto ul {
+      order: 3;
+      background: #ffffff;
+      margin: 0 !important;
+      padding-left: 100px;
+      padding-right: 70px;
+      padding-top: 50px;
+      padding-bottom: 40px;
+      margin-top: -10px !important;
+      width: calc(100% + 40px) !important;
+      margin-left: -20px !important;
+      box-sizing: border-box;
+    }
+
+    .lulo-ahorro .ahorro-imagen img {
+      display: none !important;
+    }
+
+    .ahorro-texto ul li {
+      margin-bottom: 15px;
+      /* ajusta el valor a tu gusto */
+    }
+
+    /* BOTONES */
+    .btns {
+      order: 4;
+      background: #ffffff;
+      padding-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: auto;
+      width: calc(100% + 40px) !important;
+      margin-left: -20px !important;
+      box-sizing: border-box;
+    }
+
+    /* IMPORTANTE */
+    .ahorro-texto {
+      display: contents;
+    }
+
+
+
+    /*-----------------------------------------------------------------------*/
+    /* --- LULO CRÉDITO --- */
+    /* CONTENEDOR */
+    .lulo-credito {
+      display: flex;
+      flex-direction: column;
+      background: #EDEFF2;
+      margin-top: 20px;
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    /* 🔵 BLOQUE SUPERIOR (GRIS) */
+    .lulo-credito .credito-imagen {
+      order: 2;
+      padding: 20px 20px 0 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      background: transparent !important;
+    }
+
+    /* TÍTULO EN EL GRIS */
+    .credito-texto h2 {
+      order: 1;
+      text-align: left !important;
+      padding: 30px 30px 0 30px;
+      margin: 20px 15px;
+    }
+
+    /* VIDEO */
+    .lulo-credito .credito-imagen video {
+      display: block !important;
+      width: 90% !important;
+      max-width: 420px !important;
+      height: auto !important;
+      border-radius: 25px 25px 0 0;
+      object-fit: cover;
+      margin-top: -20px;
+      margin-bottom: -11px !important;
+    }
+
+    /* OCULTAR IMAGEN */
+    .lulo-credito .credito-imagen img {
+      display: none;
+    }
+
+    /* ⚪ BLOQUE INFERIOR (BLANCO) */
+    .credito-texto ul {
+      order: 3;
+      background: #ffffff;
+      margin: 0 !important;
+      padding-left: 100px;
+      padding-right: 70px;
+      padding-top: 50px;
+      padding-bottom: 1px;
+      margin-top: -10px !important;
+      width: calc(100% + 40px) !important;
+      margin-left: -20px !important;
+      box-sizing: border-box;
+    }
+
+    .credito-texto ul li {
+      margin-bottom: 15px;
+    }
+
+    /* BOTONES */
+    .tarjeta-botones {
+      order: 4;
+      background: #ffffff;
+      padding-top: 1px;
+      padding-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 0 !important;
+      width: calc(100% + 40px) !important;
+      margin-left: -20px !important;
+      box-sizing: border-box;
+    }
+
+    /* IMPORTANTE */
+    .credito-texto {
+      display: contents;
+    }
+
+
+    /*-----------------------------------------------------------------------*/
+    /* --- LULO TARJETA MOBILE --- */
+    .lulo-tarjeta {
+      display: flex;
+      flex-direction: column;
+      background: #EDEFF2;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    /* IMAGEN ARRIBA */
+    .lulo-tarjeta .tarjeta-imagen {
+      order: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 25px 0 25px;
+    }
+
+    .lulo-tarjeta .tarjeta-imagen img {
+      width: 90% !important;
+      max-width: 420px !important;
+      height: auto !important;
+      margin-left: 0 !important;
+      border-radius: 0 !important;
+    }
+
+    /* TÍTULO */
+    .tarjeta-texto h2 {
+      order: 2;
+      text-align: left !important;
+      font-size: 1.9rem !important;
+      margin: 20px 0 !important;
+      padding: 0 25px !important;
+    }
+
+    /* LISTA */
+    .tarjeta-texto ul {
+      order: 3;
+      font-size: 1rem !important;
+      line-height: 1.6 !important;
+      padding: 0 25px 0 45px !important;
+      margin: 0 !important;
+    }
+
+    .tarjeta-texto ul li {
+      margin-bottom: 15px;
+    }
+
+    /* BOTONES */
+    .tarjeta-texto .tarjeta-botones {
+      order: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 20px !important;
+      padding: 0 25px 30px 25px !important;
+      background: transparent !important;
+    }
+
+    /* IMPORTANTE */
+    .tarjeta-texto {
+      display: contents;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /* 1. HEADER (Menu Hamburguesa) */
+    .navbar {
+      padding: 15px 20px;
+      align-items: center;
+    }
+
+    body {
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /*HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    .app {
+      position: relative;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+
+
+    .logo img {
+      height: 40px;
+      margin-left: 0px;
+      margin-top: 10px;
+    }
+
+    .cta {
+      display: flex;
+      padding: 10px 20px;
+    }
+
+    /* Estilos del ícono de hamburguesa (mostrar) */
+    .menu-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 101;
+    }
+
+    /* Configuración del Menú Desplegable */
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: #f5f5f5;
+      padding: 20px 25px 40px;
+      transform: translateX(-100%);
+      transition: transform .4s ease;
+      z-index: 100;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Clase que se activa con JavaScript */
+    .menu.active {
+      transform: translateX(0);
+    }
+
+
+    .close-menu {
+      align-self: flex-end;
+      font-size: 2rem;
+      cursor: pointer;
+      margin-bottom: 20px;
+      color: #0D1321;
+    }
+
+    .menu ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu ul li a::after {
+      display: none;
+    }
+
+    /* DROPDOWN (Estilo de Acordeón simple) */
+    .dropdown-btn {
+      font-weight: 600 !important;
+    }
+
+    /* ITEMS PRINCIPALES */
+    .menu ul li {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    /* TEXTO PRINCIPAL */
+    .menu ul li>a {
+      display: block !important;
+      width: 100% !important;
+      text-align: center !important;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: #111827;
+      text-decoration: none;
+      padding: 0;
+
+    }
+
+    /* DROPDOWN */
+    .dropdown-menu {
+      position: static !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      width: 100% !important;
+      margin-top: 18px !important;
+      margin-bottom: 10px !important;
+      padding: 0 !important;
+      background: transparent !important;
+      transform: none !important;
+      gap: 0 !important;
+    }
+
+    .dropdown-menu li {
+      width: 100% !important;
+      text-align: center !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* LINKS INTERNOS */
+    .dropdown-menu>a {
+      display: block !important;
+      width: 100% !important;
+      text-align: center !important;
+      font-size: 1rem !important;
+      font-weight: bold !important;
+      padding: 10px 0 !important;
+      color: black !important;
+      border-top: 1px solid #e5e5e5 !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+
+    /* última línea */
+    .dropdown-menu>a:last-child {
+      border: none !important;
+    }
+
+
+    .dropdown-menu.open {
+      display: flex !important;
+    }
+
+    .dropdown-menu a::after {
+      display: none !important;
+    }
+
+    .section-background {
+      display: none;
+    }
+
+    .hero {
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .info-container {
+      grid-template-columns: 1fr;
+      background-color: transparent !important;
+    }
+
+    .lulo-ahorro,
+    .lulo-credito,
+    .lulo-tarjeta {
+      grid-template-columns: 1fr;
+    }
+
+    .info-text {
+      background-color: #1B2033;
+      padding: 50px;
+    }
+
+    .info-text h2 {
+      margin-top: 30px;
+      color: #DFE2E7;
+      font-size: 23px;
+      text-align: center;
+    }
+
+    .info-text ul {
+      color: #DFE2E7;
+      font-size: 14px;
+    }
+
+    .ahorro-texto {
+      padding: 30px 50px;
+      background-color: #DFE2E7;
+    }
+
+    .ahorro-texto h2 {
+      margin-top: 30px;
+      color: #1B2033;
+      font-size: 20px;
+      text-align: left;
+    }
+
+    .credito-texto {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .tarjeta-texto {
+      padding: 60px 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+
+    .ahorro-texto h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .ahorro-texto ul {
+      font-size: 16px;
+      margin-bottom: 20px;
+      margin-right: 30px;
+      margin-left: 30px;
+    }
+
+    .btns {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .btn-primary {
+      width: 70%;
+      text-align: center;
+      height: 50px;
+    }
+
+    .credito-texto h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .credito-texto ul {
+      font-size: 16px;
+      margin-bottom: 20px;
+      margin-right: 30px;
+      margin-left: 30px;
+    }
+
+    .tarjeta-texto h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    .app-links {
+      flex-direction: row;
+      gap: 5px;
+    }
+
+    .app-links img {
+      align-items: center;
+      height: 45px;
+    }
+
+
+    /*.ahorro-imagen,
+    .credito-imagen {
+      display: none;
+    }*/
+
+    .tarjeta-imagen {
+      order: 1;
+      min-height: 50vh;
+    }
+
+    .lulo-ahorro .ahorro-texto {
+      order: 1;
+      padding-top: 0;
+    }
+
+    .lulo-ahorro .ahorro-imagen {
+      order: 2;
+      min-height: 40vh;
+    }
+
+    /*.ahorro-imagen video,
+    .ahorro-imagen img {
+      max-height: 300px !important;
+      width: auto !important;
+    }*/
+
+    .ahorro-imagen video {
+      max-height: none !important;
+    }
+
+    .lulo-ahorro {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    /*.ahorro-imagen {
+      background: #1F2A44;
+      min-height: 40vh;
+      padding: 20px 0;
+    }*/
+
+    .ahorro-imagen {
+      background: transparent !important;
+      min-height: 400px !important;
+      padding: 40px 0 !important;
+    }
+
+    /* 2. TARJETA LULO */
+    .lulo-tarjeta {
+      grid-template-columns: 1fr;
+      background: #DFE2E7;
+      padding: 60px 0;
+      align-items: center;
+    }
+
+    .tarjeta-imagen {
+      order: 1;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .tarjeta-imagen img {
+      margin-left: 0;
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .tarjeta-texto {
+      order: 2;
+      padding: 0 40px;
+    }
+
+    .tarjeta-texto h2 {
+      font-size: 1.9rem;
+      text-align: left;
+    }
+
+    .tarjeta-texto ul {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin: 20px 0;
+      padding: 0 15px;
+    }
+
+    .tarjeta-botones {
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn-yellow {
+      width: 100%;
+      max-width: 250px;
+      text-align: center;
+    }
+
+    .btn-link {
+      margin-top: 10px;
+    }
+
+    /* 3. ECOSISTEMA */
+    .ecosistema {
+      padding: 80px 20px;
+    }
+
+    .ecosistema-content h2 {
+      font-size: 25px;
+    }
+
+    .ecosistema-content p {
+      font-size: 15px;
+    }
+
+    .ecosistema-subtext {
+      font-size: 14px;
+      margin-top: 0px;
+    }
+
+    .phones {
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .phone-left {
+      width: 100%;
+      height: auto;
+      max-width: 300px;
+    }
+
+    .btn-yellow {
+      width: 70%;
+      text-align: center;
+      height: 50px;
+    }
+
+    /* 4. FOOTER */
+    .footer {
+      padding: 40px 20px;
+    }
+
+    .footer-top {
+      align-content: center;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      text-align: center;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 15px;
+    }
+
+    .footer-col ul li {
+
+      margin: 10px 0;
+    }
+
+    .footer-col li a {
+      display: grid;
+      flex-direction: row;
+    }
+
+
+
+    .icon {
+      align-items: center;
+      padding: 10px 15px;
+      font-size: 14px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+    }
+
+    .footer-apps {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 30px;
+
+    }
+
+    .footer-apps img {
+      width: 130px;
+      margin-top: 0;
+      border: 1px solid #ffffff;
+      /* ← borde blanco */
+      border-radius: 8px;
+    }
+
+    /* Términos y Condiciones */
+    .footer-terms {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 20px 0;
+
+    }
+
+    .terms-left {
+      text-align: center;
+      max-width: 100%;
+
+    }
+
+    .terms-left h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .terms-right {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: initial;
+      max-width: 100%;
+    }
+
+
+    .terms-right .rights {
+      order: 2;
+      margin-top: 20px;
+    }
+
+    .terms-right .cert-group {
+      order: 1;
+      margin-bottom: 20px;
+    }
+
+    .rights {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .cert-group {
+      display: flex;
+      align-content: center;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .cert img,
+    .fogafin {
+      height: 50px;
+    }
+
+    .lulo-ahorro,
+    .lulo-credito,
+    .lulo-tarjeta {
+      overflow-x: hidden;
+    }
+  }
