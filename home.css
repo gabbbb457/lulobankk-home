@@ -1142,10 +1142,10 @@
     .lulo-credito .credito-imagen {
       order: 2;
       padding: 20px 20px 0 20px;
-      min-height: 250px !important;
+      min-height: 260px !important;
       display: flex;
       justify-content: center;
-      align-items: flex-end;
+      align-items: center;
       background: transparent !important;
     }
 
@@ -1220,7 +1220,7 @@
       display: block !important;
       position: relative !important;
       width: 320px !important;
-      height: 200px !important;
+      height: 250px !important;
       margin: -30px auto 0 auto !important;
       overflow: hidden !important;
       border-top: 7px solid black !important;
