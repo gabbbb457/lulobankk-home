@@ -930,6 +930,14 @@
   }
 
 
+  .marco-mobile {
+    display: none;
+  }
+
+  .marco-web {
+    display: block;
+  }
+
   /* ---------- MEDIA QUERIES ---------- */
   @media (max-width: 1024px) {
 
@@ -995,6 +1003,17 @@
 
     /*-----------------------------------------------------------------------*/
     /* --- LULO AHORRO MOBILE --- */
+
+
+    .marco-mobile {
+      display: block !important;
+    }
+
+    .marco-web {
+      display: none !important;
+    }
+
+
     /* CONTENEDOR */
     .lulo-ahorro {
       display: flex;
@@ -1007,12 +1026,24 @@
     .lulo-ahorro .ahorro-imagen {
       order: 2;
       padding: 20px;
-
+      position: relative !important;
+      /*ESTO*/
       display: flex;
       justify-content: center;
       align-items: center;
       background: transparent !important;
     }
+
+    /*.lulo-ahorro .ahorro-imagen {
+      order: 2;
+      position: relative !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: flex-end !important;
+      background: transparent !important;
+      padding: 0 !important;
+      min-height: 420px !important;
+    }*/
 
     /* TAMBIÉN METEMOS EL TÍTULO EN EL GRIS */
     .ahorro-texto h2 {
@@ -1020,6 +1051,21 @@
       text-align: left !important;
       padding: 30px 30px 0 30px;
       margin: 20px 15px;
+    }
+
+    .marco-mobile {
+      display: block !important;
+      position: relative !important;
+      z-index: 2 !important;
+      width: 200px !important;
+      /* ajusta hasta que encaje */
+      height: auto !important;
+      pointer-events: none;
+    }
+
+    /* Marco web oculto en mobile */
+    .marco-web {
+      display: none !important;
     }
 
     /* VIDEO */
