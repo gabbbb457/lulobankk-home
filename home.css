@@ -723,6 +723,12 @@
     text-align: center;
   }
 
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .footer-col h4 {
     margin-bottom: 40px;
     font-size: 19px;
@@ -1388,14 +1394,16 @@
 
     .logo img {
       height: 40px;
-     margin-left: 30px;
+      margin-left: 30px;
       margin-top: 10px;
     }
 
     .cta {
       display: flex;
-      padding: 0 30px; /* igual arriba y abajo */
-      align-self: stretch; /* ← esto es clave, lo estira hasta llenar el navbar */
+      padding: 0 30px;
+      /* igual arriba y abajo */
+      align-self: stretch;
+      /* ← esto es clave, lo estira hasta llenar el navbar */
       align-items: center;
       margin-left: auto;
     }
@@ -1732,7 +1740,6 @@
     .marco-web {
       display: none !important;
     }
-  }
 
 
 
@@ -1741,222 +1748,215 @@
 
 
 
+    /* 2. TARJETA LULO */
+    .lulo-tarjeta {
+      grid-template-columns: 1fr;
+      background: #DFE2E7;
+      padding: 60px 0;
+      align-items: center;
+    }
+
+    .tarjeta-imagen {
+      order: 1;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .tarjeta-imagen img {
+      margin-left: 0;
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .tarjeta-texto {
+      order: 2;
+      padding: 0 40px;
+    }
+
+    .tarjeta-texto h2 {
+      font-size: 1.9rem;
+      text-align: left;
+    }
+
+    .tarjeta-texto ul {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin: 20px 0;
+      padding: 0 15px;
+    }
+
+    .tarjeta-botones {
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn-yellow {
+      width: 100%;
+      max-width: 250px;
+      text-align: center;
+    }
+
+    .btn-link {
+      margin-top: 10px;
+    }
+
+    /* 3. ECOSISTEMA */
+    .ecosistema {
+      padding: 80px 20px;
+    }
+
+    .ecosistema-content h2 {
+      font-size: 25px;
+    }
+
+    .ecosistema-content p {
+      font-size: 15px;
+    }
+
+    .ecosistema-subtext {
+      font-size: 14px;
+      margin-top: 0px;
+    }
+
+    .phones {
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .phone-left {
+      width: 100%;
+      height: auto;
+      max-width: 300px;
+    }
+
+    .btn-yellow {
+      width: 70%;
+      text-align: center;
+      height: 50px;
+    }
+
+    /* 4. FOOTER */
+    .footer {
+      padding: 40px 20px;
+    }
+
+    .footer-top {
+      align-content: center;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      text-align: center;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 15px;
+    }
+
+    .footer-col ul li {
+
+      margin: 10px 0;
+    }
+
+    .footer-col li a {
+      display: grid;
+      flex-direction: row;
+    }
 
 
 
+    .icon {
+      align-items: center;
+      padding: 10px 15px;
+      font-size: 14px;
+      width: 90px;
+      height: 90px;
+      text-align: center;
+    }
+
+    .footer-apps {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 30px;
+      width: 100%;
+
+    }
+
+    .footer-apps img {
+      width: 130px;
+      margin-top: 0;
+      border: 1px solid #ffffff;
+      /* ← borde blanco */
+      border-radius: 8px;
+    }
+
+    /* Términos y Condiciones */
+    .footer-terms {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 20px 0;
+
+    }
+
+    .terms-left {
+      text-align: center;
+      max-width: 100%;
+
+    }
+
+    .terms-left h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .terms-right {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: initial;
+      max-width: 100%;
+    }
 
 
+    .terms-right .rights {
+      order: 2;
+      margin-top: 20px;
+    }
 
+    .terms-right .cert-group {
+      order: 1;
+      margin-bottom: 20px;
+    }
 
+    .rights {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
 
+    .cert-group {
+      display: flex;
+      align-content: center;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
 
-  /* 2. TARJETA LULO */
-  .lulo-tarjeta {
-    grid-template-columns: 1fr;
-    background: #DFE2E7;
-    padding: 60px 0;
-    align-items: center;
-  }
+    .cert img,
+    .fogafin {
+      height: 50px;
+    }
 
-  .tarjeta-imagen {
-    order: 1;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-  }
-
-  .tarjeta-imagen img {
-    margin-left: 0;
-    width: 100%;
-    max-width: 350px;
-  }
-
-  .tarjeta-texto {
-    order: 2;
-    padding: 0 40px;
-  }
-
-  .tarjeta-texto h2 {
-    font-size: 1.9rem;
-    text-align: left;
-  }
-
-  .tarjeta-texto ul {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 20px 0;
-    padding: 0 15px;
-  }
-
-  .tarjeta-botones {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-
-  .btn-yellow {
-    width: 100%;
-    max-width: 250px;
-    text-align: center;
-  }
-
-  .btn-link {
-    margin-top: 10px;
-  }
-
-  /* 3. ECOSISTEMA */
-  .ecosistema {
-    padding: 80px 20px;
-  }
-
-  .ecosistema-content h2 {
-    font-size: 25px;
-  }
-
-  .ecosistema-content p {
-    font-size: 15px;
-  }
-
-  .ecosistema-subtext {
-    font-size: 14px;
-    margin-top: 0px;
-  }
-
-  .phones {
-    gap: 30px;
-    margin: 40px 0;
-  }
-
-  .phone-left {
-    width: 100%;
-    height: auto;
-    max-width: 300px;
-  }
-
-  .btn-yellow {
-    width: 70%;
-    text-align: center;
-    height: 50px;
-  }
-
-  /* 4. FOOTER */
-  .footer {
-    padding: 40px 20px;
-  }
-
-  .footer-top {
-    align-content: center;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: center;
-  }
-
-  .footer-col h4 {
-    margin-bottom: 15px;
-  }
-
-  .footer-col ul li {
-
-    margin: 10px 0;
-  }
-
-  .footer-col li a {
-    display: grid;
-    flex-direction: row;
-  }
-
-
-
-  .icon {
-    align-items: center;
-    padding: 10px 15px;
-    font-size: 14px;
-    width: 90px;
-    height: 90px;
-    text-align: center;
-  }
-
-  .footer-apps {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 30px;
-
-  }
-
-  .footer-apps img {
-    width: 130px;
-    margin-top: 0;
-    border: 1px solid #ffffff;
-    /* ← borde blanco */
-    border-radius: 8px;
-  }
-
-  /* Términos y Condiciones */
-  .footer-terms {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px 0;
-
-  }
-
-  .terms-left {
-    text-align: center;
-    max-width: 100%;
-
-  }
-
-  .terms-left h3 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .terms-right {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-size: initial;
-    max-width: 100%;
-  }
-
-
-  .terms-right .rights {
-    order: 2;
-    margin-top: 20px;
-  }
-
-  .terms-right .cert-group {
-    order: 1;
-    margin-bottom: 20px;
-  }
-
-  .rights {
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
-
-  .cert-group {
-    display: flex;
-    align-content: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .cert img,
-  .fogafin {
-    height: 50px;
-  }
-
-  .lulo-ahorro,
-  .lulo-credito,
-  .lulo-tarjeta {
-    overflow-x: hidden;
+    .lulo-ahorro,
+    .lulo-credito,
+    .lulo-tarjeta {
+      overflow-x: hidden;
+    }
   }
