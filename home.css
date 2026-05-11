@@ -35,7 +35,6 @@
     background-color: #fff;
     padding: 0px 0px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    transform: scale(0px);
     transition: all 0.5s ease-in-out;
   }
 
@@ -944,6 +943,9 @@
     display: none !important;
   }
 
+  .close-menu {
+    display: none;
+  }
 
 
   /* ---------- MEDIA QUERIES ---------- */
@@ -956,6 +958,10 @@
     DE BETEESE NOOO BTS NO DEBISTE HABER HECHO ESO AHORA TENDRÉ QUE
     TIRARME DEL BALCÓN BORAHAE SHIBAL*/
 
+
+    .close-menu {
+      display: block;
+    }
 
     /*---CONTAINER DE INFO---*/
     .info-container {
@@ -1357,8 +1363,9 @@
 
     /* 1. HEADER (Menu Hamburguesa) */
     .navbar {
-      padding: 15px 20px;
+      padding: 0 0 0 20px;
       align-items: center;
+      height: 70px;
     }
 
     body {
@@ -1381,13 +1388,16 @@
 
     .logo img {
       height: 40px;
-      margin-left: 0px;
+     margin-left: 30px;
       margin-top: 10px;
     }
 
     .cta {
       display: flex;
-      padding: 10px 20px;
+      padding: 0 30px; /* igual arriba y abajo */
+      align-self: stretch; /* ← esto es clave, lo estira hasta llenar el navbar */
+      align-items: center;
+      margin-left: auto;
     }
 
     /* Estilos del ícono de hamburguesa (mostrar) */
