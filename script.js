@@ -31,3 +31,32 @@ dropdownBtns.forEach(btn => {
     }
   });
 });*/
+
+
+const transition = document.querySelector(".page-transition");
+
+// Escucha CUALQUIER click en la página
+document.addEventListener("click", (e) => {
+  const link = e.target.closest('a[href]:not([href="#"])');
+  
+  if (link) {
+    e.preventDefault();
+    const url = link.href;
+
+    transition.classList.remove("exit");
+    transition.classList.add("enter");
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 500);
+  }
+});
+
+// Al cargar la nueva página — cortina sale hacia la izquierda
+window.addEventListener("pageshow", () => {
+  transition.classList.add("enter");
+
+  setTimeout(() => {
+    transition.classList.add("exit");
+  }, 100);
+});

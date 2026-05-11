@@ -17,6 +17,30 @@
     font-weight: 500;
   }
 
+  /*ORGANIZAR LAS TRANSICIONES DDE CUANDO DOY CLICK A ALGUN LINK*/
+  .page-transition {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background: #10172B;
+  z-index: 9999;
+  transition: left 0.5s ease-in-out;
+}
+
+.page-transition.enter {
+  left: 0;
+}
+
+.page-transition.exit {
+  left: -100%;
+}
+
+
+
+
+
   /* Fuentes y colores principales */
   body {
     font-family: 'Gilroy', sans-serif;
