@@ -33,9 +33,13 @@ dropdownBtns.forEach(btn => {
 });*/
 
 
-const transition = document.querySelector(".page-transition");
 
-// Escucha CUALQUIER click en la página
+
+/*HOLA GABI ESTE FUNCIONA SI SOLO QUEREMOS QUE ENTRE DERECHA A IZQ
+Y SE QUEDE AMARILLO AHÍ MIRAMOS CUAL TE GUSTA MÁS*/
+
+/*const transition = document.querySelector(".page-transition");
+
 document.addEventListener("click", (e) => {
   const link = e.target.closest('a[href]:not([href="#"])');
   
@@ -43,20 +47,35 @@ document.addEventListener("click", (e) => {
     e.preventDefault();
     const url = link.href;
 
-    transition.classList.remove("exit");
     transition.classList.add("enter");
 
     setTimeout(() => {
       window.location.href = url;
     }, 500);
   }
-});
+});*/
 
-// Al cargar la nueva página — cortina sale hacia la izquierda
-window.addEventListener("pageshow", () => {
-  transition.classList.add("enter");
 
-  setTimeout(() => {
-    transition.classList.add("exit");
-  }, 100);
+const transition = document.querySelector(".page-transition");
+
+document.addEventListener("click", (e) => {
+  const link = e.target.closest('a[href]:not([href="#"])');
+  
+  if (link) {
+    e.preventDefault();
+    const url = link.href;
+
+    // 1. Entra de derecha a izquierda
+    transition.classList.add("enter");
+
+    setTimeout(() => {
+      // 2. Sale hacia la izquierda
+      transition.classList.add("exit");
+
+      setTimeout(() => {
+        // 3. Redirige cuando ya salió
+        window.location.href = url;
+      }, 600);
+    }, 1000);
+  }
 });
